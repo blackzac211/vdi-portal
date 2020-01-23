@@ -1,13 +1,7 @@
 #globalheader { width:100%; overflow:hidden; background-color:#fff; }
-#globalheader #globalline { width:100%; height:3px; background-color:#001C54; }
 #globalheader nav { overflow:hidden; width:980px; margin:0 auto; }
-#globallogo { float:left; overflow:hidden; margin:20px 0 20px 20px; }
-#globallogo * { float:left; margin-right:6px; }
+#globallogo { margin-top:20px; }
 #globallogo strong { font-size:40px; color:#001C54; }
-#globallogo div { width:1px; height:37px; background-color:#000; }
-#globallogo span { font-size:30px; margin-top:10px; }
-#globalnav { float:right; margin-top:50px; }
-#globalnav li { display:inline; padding:35px 27px 35px 27px; font-size:16px; font-weight:bold; } 
 
 @media ( max-width: 768px ) {
 	#globalheader nav { width:100%;}
@@ -16,6 +10,5 @@
 
 @media ( max-width: 480px ) {
 	#globalheader nav { width:100%;}
-	#globalnav { float:none; margin-top:20px; }
 	#globallogo div { width:0; }
 }

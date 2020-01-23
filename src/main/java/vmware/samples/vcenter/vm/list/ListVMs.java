@@ -108,14 +108,14 @@ public class ListVMs extends SamplesAbstractBase {
         }
         // List<Summary> vmList = this.vmService.list(bldr.build());
         vmList = this.vmService.list(bldr.build());
-        
+        /*
         System.out.println("----------------------------------------");
         System.out.println("List of VMs");
         for (Summary vmSummary : vmList) {
         	System.out.println(vmSummary._getDataValue());
         }
         System.out.println("----------------------------------------");
-        
+        */
     }
     protected void cleanup() throws Exception {
     	// No cleanup required

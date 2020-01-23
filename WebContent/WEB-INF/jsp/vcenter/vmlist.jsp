@@ -25,14 +25,21 @@
 				for(var i = 0; i < list.length; i++) {
 					var item = list[i];
 					var str = "<tr>";
-					str += "<td>"+(i+1)+"</td>";
-					str += "<td>"+item.name+"</td>";
+					str += "<td><img class='powerimg' src='' /> "+item.name+"</td>";
 					str += "<td>"+item.powerState+"</td>";
-					str += "<td><span class='button' onclick='powerOnOff(\""+item.name+"\")'>"+(item.powerState=="POWERED_ON"?"끄기":"켜기")+"</span></td>";
+					str += "<td class='ctlwrap'><span class='button ctlbtn' onclick='powerOnOff(\""+item.name+"\")'></span></td>";
 					str += "</tr>";
 					$("#common-tbody").append(str);
-					hideLoading();
+					
+					if(item.powerState=="POWERED_ON") {
+						$(".ctlbtn").eq(i).html("Turn Off")
+						$(".powerimg").eq(i).attr("src", "/images/power_on.png");
+					} else {
+						$(".ctlbtn").eq(i).html("Turn On")
+						$(".powerimg").eq(i).attr("src", "/images/power_off.png");
+					}
 				}
+				hideLoading();
 			}
 		});
 	}
@@ -53,27 +60,28 @@
 		});
 	}
 </script>
+
+<style type="text/css">
+	#common-table { width:100%; }
+	#common-table th { font-weight:bold; font-size:16px; text-align:center; border:1px solid #dddddd; padding:10px; }
+	#common-table td { text-align:left; color:#2e2d2f; font-size:14px; border-bottom:1px solid #dddddd; padding:10px; } 
+	#common-table td .powerimg { position:relative; top:4px; width:20px; }
+	#common-table td.ctlwrap { text-align:center; }
+	#common-btn-area { margin:20px 0 20px 0; text-align:center; }
+</style>
 </head>
 <body>
 <jsp:include page="/common/navigation.jsp" /> 
 
 <div id="main">
 	<div id="content">
-		<div id="common-title">
-			VM List
-			<span id="contact">
-				Contact: Taehoon-Nam(1433), nacan@unist.ac.kr
-			</span>
-		</div>
 		<table id="common-table">
 			<colgroup>
-				<col width="10%" />
-				<col width="50%" />
+				<col width="60%" />
 				<col width="20%" />
 				<col width="20%" />
 			</colgroup>
 			<tr>
-				<th>No</th>
 				<th>VM Name</th>
 				<th>State</th>
 				<th>Control</th>
