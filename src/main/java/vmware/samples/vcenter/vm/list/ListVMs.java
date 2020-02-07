@@ -12,6 +12,7 @@
  */
 package vmware.samples.vcenter.vm.list;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -20,6 +21,10 @@ import org.apache.commons.cli.Option;
 
 import com.vmware.vcenter.VM;
 import com.vmware.vcenter.VMTypes.Summary;
+import com.vmware.vcenter.vm.guest.Identity;
+
+import unist.vdi.vcenter.service.CustomVM;
+
 import com.vmware.vcenter.VMTypes.FilterSpec.Builder;
 import vmware.samples.common.SamplesAbstractBase;
 import vmware.samples.vcenter.helpers.ClusterHelper;
@@ -34,19 +39,22 @@ import vmware.samples.vcenter.helpers.FolderHelper;
  */
 public class ListVMs extends SamplesAbstractBase {
     private VM vmService;
+    private Identity identity;
     private String vmFolderName;
     private String datacenterName;
     private String clusterName;
-
-    // Custom List
-    List<Summary> vmList;
     
+    private String userId;
+    private List<CustomVM> resList;
+    private List<Summary> list;
+
     /**
      * Define the options specific to this sample and configure the sample using
      * command-line arguments or a config file
      *
      * @param args command line arguments passed to the sample
      */
+    
     protected void parseArgs(String[] args) {
         Option datacenterOption = Option.builder()
                 .longOpt("datacenter")
@@ -72,8 +80,7 @@ public class ListVMs extends SamplesAbstractBase {
                 .required(false)
                 .hasArg()
                 .build();
-        List<Option> optionList = Arrays.asList(vmFolderOption,
-                datacenterOption, clusterOption);
+        List<Option> optionList = Arrays.asList(vmFolderOption, datacenterOption, clusterOption);
 
         super.parseArgs(optionList, args);
         this.vmFolderName = (String) parsedOptions.get("vmfolder");
@@ -82,9 +89,8 @@ public class ListVMs extends SamplesAbstractBase {
     }
 
     protected void setup() throws Exception {
-        this.vmService =
-                vapiAuthHelper.getStubFactory()
-                    .createStub(VM.class, sessionStubConfig);
+        this.vmService = vapiAuthHelper.getStubFactory().createStub(VM.class, sessionStubConfig);
+        this.identity = vapiAuthHelper.getStubFactory().createStub(Identity.class, sessionStubConfig);
     }
 
     protected void run() throws Exception {
@@ -106,44 +112,34 @@ public class ListVMs extends SamplesAbstractBase {
                   this.vapiAuthHelper.getStubFactory(), sessionStubConfig,
                   this.vmFolderName)));
         }
-        // List<Summary> vmList = this.vmService.list(bldr.build());
-        vmList = this.vmService.list(bldr.build());
-        /*
-        System.out.println("----------------------------------------");
-        System.out.println("List of VMs");
-        for (Summary vmSummary : vmList) {
-        	System.out.println(vmSummary._getDataValue());
+        list = this.vmService.list(bldr.build());
+		resList = new ArrayList<CustomVM>();
+		
+		for(Summary vmSummary : list) {
+			if(vmSummary.getName().startsWith(userId + "-")) {
+            	CustomVM temp = new CustomVM();
+            	temp.setVm(vmSummary.getVm());
+            	temp.setName(vmSummary.getName());
+            	temp.setPowerState(vmSummary.getPowerState().toString());
+            	try {
+            		temp.setIpAddress(identity.get(vmSummary.getVm()).getIpAddress());
+            	} catch(Exception e) {
+            		temp.setIpAddress("");
+            	}
+            	resList.add(temp);
+			}
         }
-        System.out.println("----------------------------------------");
-        */
     }
     protected void cleanup() throws Exception {
     	// No cleanup required
     }
     
-    public List<Summary> getVMList(String[] args) {
+    public List<CustomVM> getVMList(String[] args, String userId) {
     	try {
+    		this.userId = userId;
     		this.execute(args);
-			/*
-			 * Builder bldr = new Builder(); if(null != this.datacenterName &&
-			 * !this.datacenterName.isEmpty()){
-			 * bldr.setDatacenters(Collections.singleton(DatacenterHelper.
-			 * getDatacenter(this.vapiAuthHelper.getStubFactory(), this.sessionStubConfig,
-			 * this.datacenterName))); } if(null != this.clusterName &&
-			 * !this.clusterName.isEmpty()) {
-			 * bldr.setClusters(Collections.singleton(ClusterHelper.getCluster(
-			 * this.vapiAuthHelper.getStubFactory(), sessionStubConfig, this.clusterName)));
-			 * } if(null != this.vmFolderName && !this.vmFolderName.isEmpty()) {
-			 * bldr.setFolders(Collections.singleton(FolderHelper.getFolder(
-			 * this.vapiAuthHelper.getStubFactory(), sessionStubConfig,
-			 * this.vmFolderName))); } List<Summary> vmList =
-			 * this.vmService.list(bldr.build());
-			 * System.out.println("----------------------------------------");
-			 * System.out.println("List of VMs"); for (Summary vmSummary : vmList) {
-			 * System.out.println(vmSummary); }
-			 * System.out.println("----------------------------------------");
-			 */
-	        return vmList;
+    		
+	        return resList;
     	} catch(Exception e) {
     		e.printStackTrace();
     		return null;

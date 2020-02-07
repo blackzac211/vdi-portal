@@ -1,11 +1,14 @@
 package unist.vdi.vcenter.service;
 
-public class VM {
+
+public class CustomVM {
 	private String vm;
 	private String name;
 	private String powerState;
 	private String cpuCount;
 	private String memorySize;
+	
+	private String ipAddress;
 	
 	
 	public String getVm() {
@@ -37,5 +40,11 @@ public class VM {
 	}
 	public void setMemorySize(String memorySize) {
 		this.memorySize = memorySize;
+	}
+	public String getIpAddress() {
+		return ipAddress;
+	}
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
 	}
 }

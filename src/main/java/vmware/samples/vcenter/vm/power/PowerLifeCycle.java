@@ -58,7 +58,7 @@ public class PowerLifeCycle extends SamplesAbstractBase{
         System.out.println("Using VM: " + vmName + " (vmId="
             + this.vmId + " ) for Power Operations sample.");
         this.vmPowerService = this.vapiAuthHelper.getStubFactory().createStub(
-                Power.class, this.sessionStubConfig); 
+                Power.class, this.sessionStubConfig);
     }
 
     @Override
@@ -79,22 +79,18 @@ public class PowerLifeCycle extends SamplesAbstractBase{
         //Power on the vm
         System.out.println("# Example: Power on the vm");
         this.vmPowerService.start(vmId);
-        System.out.println("vm.power->start()");
 
         //Suspend the vm
         System.out.println("# Example: Suspend the vm");
         this.vmPowerService.suspend(vmId);
-        System.out.println("vm.power->suspend()" );
 
         //Resume the vm
         System.out.println("# Example: Resume the vm");
         this.vmPowerService.start(vmId);
-        System.out.println("vm.power->resume()");
 
         //Reset the vm
         System.out.println("# Example: Reset the vm");
         this.vmPowerService.reset(vmId);
-        System.out.println("vm.power->reset()");
         */
     }
 
@@ -131,7 +127,7 @@ public class PowerLifeCycle extends SamplesAbstractBase{
          * 5. Cleanup any data created by the sample run, if cleanup=true
          * 6. Logout of the server
          */
-        new PowerLifeCycle().execute(args);
+        // new PowerLifeCycle().execute(args);
     }
 
 }

@@ -4,7 +4,20 @@
 <head>
 <jsp:include page="/common/head.jsp" />
 
+<style type="text/css">
+	#common-table { width:100%; }
+	#common-table th { font-weight:bold; font-size:16px; text-align:center; border:1px solid #dddddd; padding:10px; }
+	#common-table td { text-align:left; color:#2e2d2f; font-size:14px; border-bottom:1px solid #dddddd; padding:10px; } 
+	#common-table td.t_c { text-align:center; } 
+	#common-table td .powerimg { position:relative; top:4px; width:20px; }
+	#common-table .td-control span { margin:0 5px 0 5px; }
+	#common-btn-area { margin:20px 0 20px 0; text-align:center; }
+</style>
+
 <script type="text/javascript">
+	var t = "<%=request.getParameter("t")%>";
+	t = (t == "null") ? 0 : t;
+
 	$(function() {
 		showList();
 	});
@@ -19,18 +32,23 @@
 			type:"post",
 			url:"/vcenter/selectVMListByUser.do",
 			dataType:"json",
+			data:"t="+t,
 			async:true,
 			success:function(data) {
 				list = data.list;
+				$("#common-tbody").html("");
 				for(var i = 0; i < list.length; i++) {
 					var item = list[i];
 					var str = "<tr>";
 					str += "<td><img class='powerimg' src='' /> "+item.name+"</td>";
-					str += "<td>"+item.powerState+"</td>";
-					str += "<td class='ctlwrap'><span class='button ctlbtn' onclick='powerOnOff(\""+item.name+"\")'></span></td>";
+					str += "<td class='t_c'>"+item.ipAddress+"</td>";
+					str += "<td class='t_c'>"+item.powerState+"</td>";
+					str += "<td class='td-control t_c'>";
+					str += "<span class='button' onclick='connectVM(\""+item.ipAddress+"\")'>Restart</span>";
+					str += "<span class='button' onclick='restart(\""+item.vm+"\")'>Restart</span>";
+					str += "<span class='button ctlbtn' onclick='powerOnOff(\""+item.name+"\")'></span></td>";
 					str += "</tr>";
 					$("#common-tbody").append(str);
-					
 					if(item.powerState=="POWERED_ON") {
 						$(".ctlbtn").eq(i).html("Turn Off")
 						$(".powerimg").eq(i).attr("src", "/images/power_on.png");
@@ -49,26 +67,49 @@
 		$.ajax({
 			type:"post",
 			url:"/vcenter/powerOnOff.do",
-			data:"vmName="+vmName,
+			data:"vmName="+vmName+"&t="+t,
 			dataType:"json", 
 			async:true,
 			success:function(data) {
 				var result = data.result;
 				alert(result)
 				hideLoading();
+				showList();
+			}
+		});
+	} 
+	
+	function restart(vmId) {
+		showLoading();
+		$.ajax({
+			type:"post",
+			url:"/vcenter/restart.do",
+			data:"vmId="+vmId+"&t="+t,
+			dataType:"json", 
+			async:true,
+			success:function(data) {
+				var result = data.result;
+				alert(result)
+				hideLoading();
+				showList();
+			}
+		});
+	}
+
+	function connectVM(ipAddress) {
+		showLoading();
+		$.ajax({
+			type:"post",
+			url:"/vcenter/connectVM.do",
+			data:"ipAddress="+ipAddress+"&t="+t,
+			dataType:"json", 
+			async:true,
+			success:function(data) {
+				hideLoading();
 			}
 		});
 	}
 </script>
-
-<style type="text/css">
-	#common-table { width:100%; }
-	#common-table th { font-weight:bold; font-size:16px; text-align:center; border:1px solid #dddddd; padding:10px; }
-	#common-table td { text-align:left; color:#2e2d2f; font-size:14px; border-bottom:1px solid #dddddd; padding:10px; } 
-	#common-table td .powerimg { position:relative; top:4px; width:20px; }
-	#common-table td.ctlwrap { text-align:center; }
-	#common-btn-area { margin:20px 0 20px 0; text-align:center; }
-</style>
 </head>
 <body>
 <jsp:include page="/common/navigation.jsp" /> 
@@ -77,12 +118,14 @@
 	<div id="content">
 		<table id="common-table">
 			<colgroup>
-				<col width="60%" />
+				<col width="35%" />
 				<col width="20%" />
-				<col width="20%" />
+				<col width="15%" />
+				<col width="30%" />
 			</colgroup>
 			<tr>
 				<th>VM Name</th>
+				<th>IP</th>
 				<th>State</th>
 				<th>Control</th>
 			</tr>
