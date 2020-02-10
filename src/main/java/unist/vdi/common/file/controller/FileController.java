@@ -39,7 +39,12 @@ public class FileController {
     		File file = new File("Connect_VM.bat");
 	    	FileWriter writer = new FileWriter(file, false);
 	    	writer.write("@echo off\n");
-	    	writer.write("cmdkey /generic:\""+ipAddress+":38888\" /user:\".\\"+user.getId()+"@unist.ac.kr\"\n");
+	    	// 자격 증명 삭제
+	    	writer.write("cmdkey.exe /list > \"%TEMP%\\vdi_list.txt\"\n");
+	    	writer.write("findstr.exe target %TEMP%\\vdi_list.txt > \"%TEMP%\\vdi_temp.txt\"\n");
+	    	writer.write("for /f \"delims== tokens=1,2\" %%a in (%TEMP%\\vdi_temp.txt) do cmdkey.exe /delete %%b\n");
+	    	// 신규 자격 증명 추가
+	    	writer.write("cmdkey /generic:\""+ipAddress+"\" /user:\".\\"+user.getId()+"@unist.ac.kr\"\n");
 	    	writer.write("start mstsc /v:"+ipAddress+":38888\n");
 	    	writer.write("exit");
 	    	writer.flush();
