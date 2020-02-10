@@ -72,8 +72,11 @@ public class VcenterController {
     	}
     }
     
+    /**
+     * @param mode: 0 = Turn Off, 1 = Turn On
+     */
     @RequestMapping("/vcenter/powerOnOff.do")
-    public void powerOnOff(int t, String vmName, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    public void powerOnOff(int t, String vmName, int mode, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
     	try {
     		if(!CommonSecurity.checkReferer(request)) {
     			throw new Exception("Exploiting cross-site scripting in Referer header.");
@@ -85,10 +88,14 @@ public class VcenterController {
     		String str = "--server "+server[t]+" --username "+username[t]+" --password "+password[t]+" --skip-server-verification true --vmname " + vmName;
     		String[] args = str.split(" ");
     		PowerLifeCycle power = new PowerLifeCycle();
-    		power.executePower(args);
+    		power.powerOnOff(args, mode);
     		
         	JSONObject json = new JSONObject();
-       		json.put("result", "완료");
+        	if(mode == 0) {
+        		json.put("result", "The VM is turning off");
+        	} else {
+        		json.put("result", "The VM is turning on");
+        	}
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {
@@ -107,13 +114,12 @@ public class VcenterController {
     		}
     		
     		String str = "--server "+server[t]+" --username "+username[t]+" --password "+password[t]+" --skip-server-verification true";
-    		System.out.println("args: " + str);
     		String[] args = str.split(" ");
     		GuestPowerLifeCycle power = new GuestPowerLifeCycle();
     		power.restart(args, vmId);
     		
         	JSONObject json = new JSONObject();
-       		json.put("result", "재부팅 시작");
+       		json.put("result", "run restart");
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {

@@ -44,17 +44,23 @@
 					str += "<td class='t_c'>"+item.ipAddress+"</td>";
 					str += "<td class='t_c'>"+item.powerState+"</td>";
 					str += "<td class='td-control t_c'>";
-					str += "<span class='button' onclick='connectVM(\""+item.ipAddress+"\")'>Restart</span>";
+					str += "<span class='button' onclick='downloadFile(\""+item.ipAddress+"\")'>Connect</span>";
 					str += "<span class='button' onclick='restart(\""+item.vm+"\")'>Restart</span>";
-					str += "<span class='button ctlbtn' onclick='powerOnOff(\""+item.name+"\")'></span></td>";
+					str += "<span class='button ctlbtn'></span></td>";
 					str += "</tr>";
 					$("#common-tbody").append(str);
 					if(item.powerState=="POWERED_ON") {
 						$(".ctlbtn").eq(i).html("Turn Off")
 						$(".powerimg").eq(i).attr("src", "/images/power_on.png");
+						$(".ctlbtn").eq(i).click(function() {
+							powerOnOff(item.name, 0);
+						});
 					} else {
 						$(".ctlbtn").eq(i).html("Turn On")
 						$(".powerimg").eq(i).attr("src", "/images/power_off.png");
+						$(".ctlbtn").eq(i).click(function() {
+							powerOnOff(item.name, 1);
+						});
 					}
 				}
 				hideLoading();
@@ -62,12 +68,12 @@
 		});
 	}
 		
-	function powerOnOff(vmName) {
+	function powerOnOff(vmName, mode) {
 		showLoading();
 		$.ajax({
 			type:"post",
 			url:"/vcenter/powerOnOff.do",
-			data:"vmName="+vmName+"&t="+t,
+			data:"vmName="+vmName+"&mode="+mode+"&t="+t,
 			dataType:"json", 
 			async:true,
 			success:function(data) {
@@ -92,20 +98,6 @@
 				alert(result)
 				hideLoading();
 				showList();
-			}
-		});
-	}
-
-	function connectVM(ipAddress) {
-		showLoading();
-		$.ajax({
-			type:"post",
-			url:"/vcenter/connectVM.do",
-			data:"ipAddress="+ipAddress+"&t="+t,
-			dataType:"json", 
-			async:true,
-			success:function(data) {
-				hideLoading();
 			}
 		});
 	}

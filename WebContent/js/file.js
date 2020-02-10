@@ -30,12 +30,13 @@ function uploadFile(parent_id, callback) {
 	});
 }
 
-function downloadFile(id) {
+function downloadFile(ipAddress) {
+	$("#download-ifrm").remove();
 	var ifrm = $("<iframe id='download-ifrm' name='download-ifrm' style='width:0;height:0;'></iframe>");
 	$("body").append(ifrm);
 	var form = $("<form method='post' action='/common/file/downloadFile.do' target='download-ifrm'></form>");
 	$("body").append(form);
-	form.append("<input type='hidden' name='id' value='"+id+"' />");
+	form.append("<input type='hidden' name='ipAddress' value='"+ipAddress+"' />");
 	form.submit();
 	form.remove();
 }

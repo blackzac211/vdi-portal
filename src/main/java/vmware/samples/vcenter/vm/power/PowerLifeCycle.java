@@ -33,6 +33,8 @@ public class PowerLifeCycle extends SamplesAbstractBase{
     private String vmName;
     private Power vmPowerService;
     private String vmId;
+    
+    private int mode;
 
     @Override
     protected void parseArgs(String[] args) {
@@ -52,51 +54,33 @@ public class PowerLifeCycle extends SamplesAbstractBase{
 
     @Override
     protected void setup() throws Exception {
-        this.vmId = VmHelper.getVM(vapiAuthHelper.getStubFactory(),
-                sessionStubConfig,
-                vmName);
-        System.out.println("Using VM: " + vmName + " (vmId="
-            + this.vmId + " ) for Power Operations sample.");
-        this.vmPowerService = this.vapiAuthHelper.getStubFactory().createStub(
-                Power.class, this.sessionStubConfig);
+        this.vmId = VmHelper.getVM(vapiAuthHelper.getStubFactory(), sessionStubConfig, vmName);
+        this.vmPowerService = vapiAuthHelper.getStubFactory().createStub(Power.class, sessionStubConfig);
     }
 
     @Override
     protected void run() throws Exception {
         //Get the vm power state
-        System.out.println("# Example: Get current vm power state");
         PowerTypes.Info powerInfo = this.vmPowerService.get(vmId);
 
-        // Power off the vm if it is on
-        if(PowerTypes.State.POWERED_ON.equals(powerInfo.getState())) {
-        	System.out.println("# Example: VM is powered on, power it off");
-        	this.vmPowerService.stop(vmId);
-        } else if (PowerTypes.State.POWERED_OFF.equals(powerInfo.getState())) {
-        	this.vmPowerService.start(vmId);
+        switch(mode) {
+        case 0:	// turn off
+        	if(PowerTypes.State.POWERED_ON.equals(powerInfo.getState())) {
+            	this.vmPowerService.stop(vmId);
+        	}
+        	break;
+        case 1:	// turn on
+        	if (PowerTypes.State.POWERED_OFF.equals(powerInfo.getState())) {
+            	this.vmPowerService.start(vmId);
+            }
+        	break;
         }
-        
-        /*
-        //Power on the vm
-        System.out.println("# Example: Power on the vm");
-        this.vmPowerService.start(vmId);
-
-        //Suspend the vm
-        System.out.println("# Example: Suspend the vm");
-        this.vmPowerService.suspend(vmId);
-
-        //Resume the vm
-        System.out.println("# Example: Resume the vm");
-        this.vmPowerService.start(vmId);
-
-        //Reset the vm
-        System.out.println("# Example: Reset the vm");
-        this.vmPowerService.reset(vmId);
-        */
     }
 
     @Override
     protected void cleanup() throws Exception {
         //Power off the vm
+    	/*
         System.out.println("# Cleanup: Power off the vm");
         this.vmPowerService.stop(vmId);
         System.out.println("vm.power->stop()");
@@ -110,9 +94,11 @@ public class PowerLifeCycle extends SamplesAbstractBase{
         else {
             System.out.println("vm.Power Warning: Could not power off vm" );
         }
+        */
     }
 
-    public void executePower(String[] args) throws Exception {
+    public void powerOnOff(String[] args, int mode) throws Exception {
+    	this.mode = mode;
     	this.execute(args);
     }
     
