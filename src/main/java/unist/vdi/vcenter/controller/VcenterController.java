@@ -13,28 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import unist.vdi.account.service.AccountManager;
 import unist.vdi.account.service.UserVO;
 import unist.vdi.common.CommonSecurity;
-import unist.vdi.vcenter.service.GuestPowerLifeCycle;
+import unist.vdi.vcenter.service.ListVMsService;
+import unist.vdi.vcenter.service.PowerService;
+import unist.vdi.vcenter.service.PowerShellService;
+import unist.vdi.vcenter.service.VDIConnection;
 import unist.vdi.vcenter.service.CustomVM;
-import vmware.samples.vcenter.vm.list.ListVMs;
-import vmware.samples.vcenter.vm.power.PowerLifeCycle;
 
 
 @Controller
 public class VcenterController {
-	private String[] server = new String[2];
-	private String[] username = new String[2];
-	private String[] password = new String[2];
-	
-	public VcenterController() {
-		// 인터넷망 vcenter 정보
-		server[0] = "10.4.1.205";
-		username[0] = "administrator";
-		password[0] = "Un!s7##vdiad";
-		// 업무망 vcenter 정보
-		server[1] = "10.4.1.196";
-		username[1] = "administrator";
-		password[1] = "Un!s7##vdiad";
-	}
 	
 	@RequestMapping("/vcenter/vmlist.do")
     public String list(HttpSession session) throws Exception {
@@ -45,9 +32,21 @@ public class VcenterController {
 		}
     }
 	
+	@RequestMapping("/vcenter/console.do")
+    public String console(String vmId, HttpServletRequest request, HttpSession session) throws Exception {
+		if(!AccountManager.isLogin(session)) {
+			return "/account/redirect_login";
+		} else {
+			UserVO user = (UserVO)session.getAttribute("user");
+			// if(vmName.startsWith(user.getId())) {
+				return "/vcenter/console";
+			// }
+			// return "/common/error";
+		}
+    }
     
     @RequestMapping("/vcenter/selectVMListByUser.do")
-    public void selectVMListByUser(int t, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    public void selectVMListByUser(int nav, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
     	try {
     		if(!CommonSecurity.checkReferer(request)) {
     			throw new Exception("Exploiting cross-site scripting in Referer header.");
@@ -56,12 +55,14 @@ public class VcenterController {
     			throw new Exception();
     		}
     		
-    		String str = "--server "+server[t]+" --username "+username[t]+" --password "+password[t]+" --skip-server-verification true";
-    		String[] args = str.split(" ");
-        	
-    		ListVMs listVMs = new ListVMs();
     		UserVO user = (UserVO)session.getAttribute("user");
-    		List<CustomVM> list = listVMs.getVMList(args, user.getId());
+    		VDIConnection conn = null;
+    		if(nav == 0) {
+    			conn = (VDIConnection)session.getAttribute("vdiConn");
+    		} else {
+    			conn = (VDIConnection)session.getAttribute("vdiInConn");
+    		}
+    		List<CustomVM> list = new ListVMsService().getVMList(user.getId(), conn);
     		
     		JSONObject json = new JSONObject();
         	json.put("list", list);
@@ -72,11 +73,9 @@ public class VcenterController {
     	}
     }
     
-    /**
-     * @param mode: 0 = Turn Off, 1 = Turn On
-     */
-    @RequestMapping("/vcenter/powerOnOff.do")
-    public void powerOnOff(int t, String vmName, int mode, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    
+    @RequestMapping("/vcenter/powerOn.do")
+    public void powerOn(int nav, String vmId, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
     	try {
     		if(!CommonSecurity.checkReferer(request)) {
     			throw new Exception("Exploiting cross-site scripting in Referer header.");
@@ -84,18 +83,16 @@ public class VcenterController {
     		if(!AccountManager.isLogin(session)) {
     			throw new Exception();
     		}
+    		VDIConnection conn = null;
+    		if(nav == 0) {
+    			conn = (VDIConnection)session.getAttribute("vdiConn");
+    		} else {
+    			conn = (VDIConnection)session.getAttribute("vdiInConn");
+    		}
+    		new PowerService().powerOn(vmId, conn);
     		
-    		String str = "--server "+server[t]+" --username "+username[t]+" --password "+password[t]+" --skip-server-verification true --vmname " + vmName;
-    		String[] args = str.split(" ");
-    		PowerLifeCycle power = new PowerLifeCycle();
-    		power.powerOnOff(args, mode);
-    		
-        	JSONObject json = new JSONObject();
-        	if(mode == 0) {
-        		json.put("result", "The VM is turning off");
-        	} else {
-        		json.put("result", "The VM is turning on");
-        	}
+    		JSONObject json = new JSONObject();
+        	json.put("result", "The VM is turning on");
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {
@@ -103,8 +100,60 @@ public class VcenterController {
     	}
     }
     
-    @RequestMapping("/vcenter/restart.do")
-    public void restart(int t, String vmId, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    @RequestMapping("/vcenter/powerOff.do")
+    public void powerOff(int nav, String vmId, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    	try {
+    		if(!CommonSecurity.checkReferer(request)) {
+    			throw new Exception("Exploiting cross-site scripting in Referer header.");
+    		}
+    		if(!AccountManager.isLogin(session)) {
+    			throw new Exception();
+    		}
+    		VDIConnection conn = null;
+    		if(nav == 0) {
+    			conn = (VDIConnection)session.getAttribute("vdiConn");
+    		} else {
+    			conn = (VDIConnection)session.getAttribute("vdiInConn");
+    		}
+    		new PowerService().powerOff(vmId, conn);
+    		
+    		JSONObject json = new JSONObject();
+    		json.put("result", "The VM is turning off");
+        	response.setContentType("text/json;charset=utf-8");
+        	response.getWriter().print(json.toString());
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+    
+    @RequestMapping("/vcenter/reset.do")
+    public void reset(int nav, String vmId, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    	try {
+    		if(!CommonSecurity.checkReferer(request)) {
+    			throw new Exception("Exploiting cross-site scripting in Referer header.");
+    		}
+    		if(!AccountManager.isLogin(session)) {
+    			throw new Exception();
+    		}
+    		VDIConnection conn = null;
+    		if(nav == 0) {
+    			conn = (VDIConnection)session.getAttribute("vdiConn");
+    		} else {
+    			conn = (VDIConnection)session.getAttribute("vdiInConn");
+    		}
+    		new PowerService().reset(vmId, conn);
+    		
+    		JSONObject json = new JSONObject();
+    		json.put("result", "The VM is restarting");
+        	response.setContentType("text/json;charset=utf-8");
+        	response.getWriter().print(json.toString());
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
+    
+    @RequestMapping("/vcenter/acquireMksTicket.do")
+    public void acquireMksTicket(String vmId, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
     	try {
     		if(!CommonSecurity.checkReferer(request)) {
     			throw new Exception("Exploiting cross-site scripting in Referer header.");
@@ -113,13 +162,8 @@ public class VcenterController {
     			throw new Exception();
     		}
     		
-    		String str = "--server "+server[t]+" --username "+username[t]+" --password "+password[t]+" --skip-server-verification true";
-    		String[] args = str.split(" ");
-    		GuestPowerLifeCycle power = new GuestPowerLifeCycle();
-    		power.restart(args, vmId);
-    		
-        	JSONObject json = new JSONObject();
-       		json.put("result", "run restart");
+    		JSONObject json = new JSONObject();
+    		json.put("map", new PowerShellService().acquireMksTicket(vmId));
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {

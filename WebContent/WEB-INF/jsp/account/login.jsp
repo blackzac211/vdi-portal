@@ -15,6 +15,17 @@
 	#loginwrap li input { width:100%; font-size:16px; height:45px; border:0; border-bottom:2px solid #dddddd; }
 	#loginwrap li input:focus { outline:none; border-color:#000; } 
 	#loginwrap #loginbtn { margin-top:42px; width:100%; height:50px; border:0; border-radius:5px; font-size:18px; background-color:#001C54; color:#ffffff; }
+
+	@media ( max-width: 980px ) {
+		#content { margin-top:0; }
+		#loginwrap { float:left; }
+	}
+	
+	@media ( max-width: 480px ) {
+		#content { margin-top:0; }
+		#left-area header { margin-top:0; }
+		#loginwrap { float:left; }
+	}
 </style>
 
 <script type="text/javascript">
@@ -25,18 +36,19 @@
 
 	function processLogin() {
 		var params = $("#loginform").serialize();
-		
+		showLoading();
 		$.ajax({
 			type: "post",
 			url: "/account/loginProcess.do",
 			data: params,
 			dataType: "json",
-			async: false,
+			async: true,
 			success: function(data) {
 				location.href = "/vcenter/vmlist.do";
 			},
             error: function() {
             	alert("Incorrect username or password.");
+            	hideLoading();
             }
 		});
 		return false;
@@ -61,6 +73,21 @@
 				<input id="loginbtn" type="submit" class="button" value="Sign in" />
 			</form>
 		</div>
+
+		
+		<!--  <div id="wmksContainer" style="position:absolute;width:100%;height:100%"></div> -->
+		<script>
+		/*
+	 		var wmks = WMKS.createWMKS("wmksContainer",{})
+	 			.register(WMKS.CONST.Events.CONNECTION_STATE_CHANGE,								
+				function(event,data){	
+					if(data.state == cons.ConnectionState.CONNECTED) {
+						console.log("connection	state change : connected");
+					}
+			});
+	 		wmks.connect("ws://10.4.1.205:8080");
+	 	*/
+		</script>
 	</div>
 </div> 
 

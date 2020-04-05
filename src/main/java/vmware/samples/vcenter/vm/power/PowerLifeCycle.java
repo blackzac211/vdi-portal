@@ -12,7 +12,7 @@
  */
 package vmware.samples.vcenter.vm.power;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.cli.Option;
@@ -20,48 +20,29 @@ import com.vmware.vcenter.vm.Power;
 import com.vmware.vcenter.vm.PowerTypes;
 
 import vmware.samples.common.SamplesAbstractBase;
-import vmware.samples.vcenter.helpers.VmHelper;
 
-/**
- * Description: Demonstrates the Power Life Cycle of a VM
- *
- * Author: VMware, Inc.
- * Sample Prerequisites: The sample needs an existing VM
- */
-public class PowerLifeCycle extends SamplesAbstractBase{
 
-    private String vmName;
+public class PowerLifeCycle extends SamplesAbstractBase {
+
     private Power vmPowerService;
     private String vmId;
-    
     private int mode;
 
     @Override
     protected void parseArgs(String[] args) {
-        // Parse the command line options or use config file
-        Option vmNameOption = Option.builder()
-            .longOpt("vmname")
-            .desc("Name of the VM on which the power operations"
-            		+ " would be performed")
-            .required(true)
-            .hasArg()
-            .argName("VM NAME")
-            .build();
-        List<Option> optionList = Collections.singletonList(vmNameOption);
+        List<Option> optionList = new ArrayList<Option>();
         super.parseArgs(optionList, args);
-        this.vmName =  (String) parsedOptions.get("vmname");
     }
 
     @Override
     protected void setup() throws Exception {
-        this.vmId = VmHelper.getVM(vapiAuthHelper.getStubFactory(), sessionStubConfig, vmName);
-        this.vmPowerService = vapiAuthHelper.getStubFactory().createStub(Power.class, sessionStubConfig);
+        vmPowerService = vapiAuthHelper.getStubFactory().createStub(Power.class, sessionStubConfig);
     }
 
     @Override
     protected void run() throws Exception {
-        //Get the vm power state
-        PowerTypes.Info powerInfo = this.vmPowerService.get(vmId);
+        // Get the vm power state
+        PowerTypes.Info powerInfo = vmPowerService.get(vmId);
 
         switch(mode) {
         case 0:	// turn off
@@ -79,41 +60,16 @@ public class PowerLifeCycle extends SamplesAbstractBase{
 
     @Override
     protected void cleanup() throws Exception {
-        //Power off the vm
-    	/*
-        System.out.println("# Cleanup: Power off the vm");
-        this.vmPowerService.stop(vmId);
-        System.out.println("vm.power->stop()");
-        PowerTypes.Info powerInfo = this.vmPowerService.get(vmId);
-
-        //Power off the vm if it is on
-        if (PowerTypes.State.POWERED_OFF.equals(powerInfo.getState()))
-        {
-            System.out.println("VM is powered off" );
-        }
-        else {
-            System.out.println("vm.Power Warning: Could not power off vm" );
-        }
-        */
+    	
     }
-
-    public void powerOnOff(String[] args, int mode) throws Exception {
+    /*
+    public void powerOnOff(int nav, String vmId, int mode) throws Exception {
+    	String str = "--server "+VcenterAccount.server[nav]+" --username "+VcenterAccount.username[nav]+" --password "+VcenterAccount.password[nav]+" --skip-server-verification true";
+		String[] args = str.split(" ");
+		
+		this.vmId = vmId;
     	this.mode = mode;
     	this.execute(args);
     }
-    
-    public static void main(String[] args) throws Exception {
-        /*
-         * Execute the sample using the command line arguments or parameters
-         * from the configuration file. This executes the following steps:
-         * 1. Parse the arguments required by the sample
-         * 2. Login to the server
-         * 3. Setup any resources required by the sample run
-         * 4. Run the sample
-         * 5. Cleanup any data created by the sample run, if cleanup=true
-         * 6. Logout of the server
-         */
-        // new PowerLifeCycle().execute(args);
-    }
-
+    */
 }

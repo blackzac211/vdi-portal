@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initiial-scale=1,maximum-scale=1, user-scalable=no">
 <title>VDI Portal</title>
 
+<link rel="icon" href="/images/favicon.ico" sizes="32x32">
 <link rel=stylesheet href="/css/base.css" type="text/css" />
 <link rel=stylesheet href="/css/navigation.css" type="text/css" />
 
 <script type="text/javascript" src="/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="/js/library.js" charset="utf-8"></script>
 <script type="text/javascript" src="/js/file.js" charset="utf-8"></script>
+

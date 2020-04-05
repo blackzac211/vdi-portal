@@ -31,12 +31,18 @@ function uploadFile(parent_id, callback) {
 }
 
 function downloadFile(ipAddress) {
+	// showLoading();
 	$("#download-ifrm").remove();
 	var ifrm = $("<iframe id='download-ifrm' name='download-ifrm' style='width:0;height:0;'></iframe>");
 	$("body").append(ifrm);
 	var form = $("<form method='post' action='/common/file/downloadFile.do' target='download-ifrm'></form>");
 	$("body").append(form);
 	form.append("<input type='hidden' name='ipAddress' value='"+ipAddress+"' />");
+	/*
+	ifrm.load(function() {
+		hideLoading();
+	});
+	*/
 	form.submit();
 	form.remove();
 }

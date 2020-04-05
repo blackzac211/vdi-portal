@@ -1,14 +1,17 @@
 #globalheader { width:100%; overflow:hidden; background-color:#fff; margin-bottom:10px; }
 #globalheader nav { overflow:hidden; width:980px; margin:0 auto; }
-#globallogo { margin-top:20px; }
-#globallogo strong { ont-size:40px; color:#001C54; }
+#globallogo { float:left; margin-top:20px; }
+#globallogo strong { font-size:40px; color:#001C54; }
 
-@media ( max-width: 768px ) {
-	#globalheader nav { width:100%;}
-	#globalnav { float:none; margin-top:20px; }
+/* 
+#globalheader #globalnav { float:right; margin-top:30px; }
+#globalheader #globalnav li { float:left; width:100px; text-align:center; padding:3px 0 3px 0; cursor:pointer; font-weight:bold; }
+ */
+
+
+@media ( max-width: 980px ) {
+	#globalheader nav { width:100%; }
 }
 
 @media ( max-width: 480px ) {
-	#globalheader nav { width:100%;}
-	#globallogo div { width:0; }
-}
+	#globalheader nav { width:100%; }

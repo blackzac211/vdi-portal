@@ -72,7 +72,7 @@ public class VimAuthenticationHelper {
             this.vimPort = vimService.getVimPort();
             Map<String, Object> ctxt =
                     ((BindingProvider) vimPort).getRequestContext();
-
+            
              /*
               * Store the Server URL in the request context and specify true
               * to maintain the connection between the client and server.
@@ -85,7 +85,7 @@ public class VimAuthenticationHelper {
 
             // Retrieve the ServiceContent object and login
             this.serviceContent = vimPort.retrieveServiceContent(SVC_INST_REF);
-
+            
             this.vimPort.login(
                 serviceContent.getSessionManager(), username, password, null);
 

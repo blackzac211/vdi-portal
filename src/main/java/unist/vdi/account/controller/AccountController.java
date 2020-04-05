@@ -14,6 +14,8 @@ import unist.vdi.account.service.LDAPManager;
 import unist.vdi.account.service.UserVO;
 import unist.vdi.common.CommonSecurity;
 import unist.vdi.common.CommonUtil;
+import unist.vdi.vcenter.service.VCenterAccount;
+import unist.vdi.vcenter.service.VDIConnection;
 
 
 
@@ -47,8 +49,16 @@ public class AccountController {
 				user.setErpid("99999");
 			}
 			user.setIp(CommonUtil.getUserIP(request));
-			
 			session.setAttribute("user", user);
+			
+			// vcenter 커넥션 세션 생성
+			VDIConnection vdiConn = new VDIConnection(VCenterAccount.server, VCenterAccount.id, VCenterAccount.pwd, true);
+			vdiConn.login();
+			// VDIConnection vdiInConn = new VDIConnection(VCenterAccount.in_server, VCenterAccount.in_id, VCenterAccount.in_pwd, true);
+			// vdiInConn.login();
+			
+			session.setAttribute("vdiConn", vdiConn);
+			// session.setAttribute("vdiInConn", vdiInConn);
 			
         	JSONObject json = new JSONObject();
         	response.setContentType("text/json;charset=utf-8");

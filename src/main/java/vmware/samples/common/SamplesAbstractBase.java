@@ -14,8 +14,10 @@
 package vmware.samples.common;
 
 import java.security.KeyStore;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -305,9 +307,11 @@ public abstract class SamplesAbstractBase {
         this.vapiAuthHelper = new VapiAuthenticationHelper();
         this.vimAuthHelper = new VimAuthenticationHelper();
         HttpConfiguration httpConfig = buildHttpConfiguration();
+        
         this.sessionStubConfig =
                 vapiAuthHelper.loginByUsernameAndPassword(
                     this.server, this.username, this.password, httpConfig);
+        
         this.vimAuthHelper.loginByUsernameAndPassword(
                     this.server, this.username, this.password);
     }
@@ -407,6 +411,9 @@ public abstract class SamplesAbstractBase {
      * @throws Exception
      */
     protected void logout() throws Exception {
+    	SimpleDateFormat df = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
+    	System.out.println(df.format(Calendar.getInstance().getTime()) + " : logout() start");
+    	
         this.vapiAuthHelper.logout();
         this.vimAuthHelper.logout();
     }

@@ -12,8 +12,10 @@
  */
 package vmware.samples.vcenter.vm.list;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
@@ -47,7 +49,10 @@ public class ListVMs extends SamplesAbstractBase {
     private String userId;
     private List<CustomVM> resList;
     private List<Summary> list;
-
+    
+	
+	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    
     /**
      * Define the options specific to this sample and configure the sample using
      * command-line arguments or a config file
@@ -56,6 +61,9 @@ public class ListVMs extends SamplesAbstractBase {
      */
     
     protected void parseArgs(String[] args) {
+    	System.out.println("\n");
+    	System.out.println(df.format(Calendar.getInstance().getTime()) + " : parseArgs() start");
+    	
         Option datacenterOption = Option.builder()
                 .longOpt("datacenter")
                 .desc("OPTIONAL: Specify the name of the Datacenter"
@@ -83,17 +91,24 @@ public class ListVMs extends SamplesAbstractBase {
         List<Option> optionList = Arrays.asList(vmFolderOption, datacenterOption, clusterOption);
 
         super.parseArgs(optionList, args);
-        this.vmFolderName = (String) parsedOptions.get("vmfolder");
-        this.datacenterName = (String) parsedOptions.get("datacenter");
-        this.clusterName = (String) parsedOptions.get("cluster");
+        vmFolderName = (String) parsedOptions.get("vmfolder");
+        datacenterName = (String) parsedOptions.get("datacenter");
+        clusterName = (String) parsedOptions.get("cluster");
+        
+        System.out.println(df.format(Calendar.getInstance().getTime()) + " : parseArgs() end");
     }
 
     protected void setup() throws Exception {
-        this.vmService = vapiAuthHelper.getStubFactory().createStub(VM.class, sessionStubConfig);
-        this.identity = vapiAuthHelper.getStubFactory().createStub(Identity.class, sessionStubConfig);
+    	System.out.println(df.format(Calendar.getInstance().getTime()) + " : setup() start");
+    	
+        vmService = vapiAuthHelper.getStubFactory().createStub(VM.class, sessionStubConfig);
+        identity = vapiAuthHelper.getStubFactory().createStub(Identity.class, sessionStubConfig);
+        
+        System.out.println(df.format(Calendar.getInstance().getTime()) + " : setup() end");
     }
 
     protected void run() throws Exception {
+    	System.out.println(df.format(Calendar.getInstance().getTime()) + " : run() start");
     	
         Builder bldr = new Builder();
         if(null != this.datacenterName && !this.datacenterName.isEmpty()){
@@ -129,13 +144,18 @@ public class ListVMs extends SamplesAbstractBase {
             	resList.add(temp);
 			}
         }
+		
+		System.out.println(df.format(Calendar.getInstance().getTime()) + " : run() end");
     }
     protected void cleanup() throws Exception {
-    	// No cleanup required
+    	
     }
-    
-    public List<CustomVM> getVMList(String[] args, String userId) {
+    /*
+    public List<CustomVM> getVMList(int nav, String userId) {
     	try {
+    		String str = "--server "+VcenterAccount.server[nav]+" --username "+VcenterAccount.username[nav]+" --password "+VcenterAccount.password[nav]+" --skip-server-verification true";
+    		String[] args = str.split(" ");
+    		
     		this.userId = userId;
     		this.execute(args);
     		
@@ -145,18 +165,5 @@ public class ListVMs extends SamplesAbstractBase {
     		return null;
     	}
     }
-    
-    public static void main(String[] args) throws Exception {
-        /*
-         * Execute the sample using the command line arguments or parameters
-         * from the configuration file. This executes the following steps:
-         * 1. Parse the arguments required by the sample
-         * 2. Login to the server
-         * 3. Setup any resources required by the sample run
-         * 4. Run the sample
-         * 5. Cleanup any data created by the sample run, if cleanup=true
-         * 6. Logout of the server
-         */
-        new ListVMs().execute(args);
-    }
+    */
 }

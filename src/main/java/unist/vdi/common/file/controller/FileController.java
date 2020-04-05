@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import unist.vdi.account.service.AccountManager;
 import unist.vdi.account.service.UserVO;
 import unist.vdi.common.CommonSecurity;
+
 
 @Controller
 public class FileController {
@@ -36,7 +39,7 @@ public class FileController {
 			// insertDownloadLog(vo, session);
 			
 	    	// 파일 생성
-    		File file = new File("Connect_VM.bat");
+    		File file = new File("E:\\converter\\ConnectPC.bat");
 	    	FileWriter writer = new FileWriter(file, false);
 	    	writer.write("@echo off\n");
 	    	// 자격 증명 삭제
@@ -49,14 +52,34 @@ public class FileController {
 	    	writer.write("exit");
 	    	writer.flush();
 	    	writer.close();
-		
+	    	
+	    	// EXE 파일 생성
+	    	SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmmss");
+	    	Calendar cal = Calendar.getInstance();
+	    	String dirName = df.format(cal.getTime());
+	    	File dir = new File("E:\\converter\\" + dirName);
+	    	if(!dir.exists())
+	    		dir.mkdir();
+	    	String path = "";
+			path += "E:\\converter\\Bat_To_Exe_Converter.exe -bat ";
+			path += "E:\\converter\\ConnectPC.bat -save ";
+			path += "E:\\converter\\"+dirName+"\\ConnectPC.exe -icon ";
+			path += "E:\\converter\\logo.ico";
+			Process process = Runtime.getRuntime().exec(path);
+			process.getErrorStream().close();
+			process.getInputStream().close();
+			process.getOutputStream().close();
+			process.waitFor();
+			
+			File exeFile = new File("E:\\converter\\"+dirName+"\\ConnectPC.exe");
+			
 			response.setContentType("application/octet-stream");
-			response.setContentLengthLong((long)file.length());
+			response.setContentLengthLong((long)exeFile.length());
 			response.setHeader("Content-Transfer-Encoding", "binary");
-			response.setHeader("Content-Disposition", "attachment; fileName=\"Connect_VM.bat\";");
+			response.setHeader("Content-Disposition", "attachment; fileName=\"ConnectPC.exe\";");
 		
 			OutputStream out = response.getOutputStream();
-			FileInputStream in = new FileInputStream(file);
+			FileInputStream in = new FileInputStream(exeFile);
 			FileCopyUtils.copy(in, out);
 			in.close();
 			out.flush();
@@ -68,4 +91,11 @@ public class FileController {
 			} catch(Exception ex) {}
 		}
     }
+	
+	
+	
+	public static void main(String[] args) throws Exception {
+		
+		
+	}
 }
