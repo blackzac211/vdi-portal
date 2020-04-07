@@ -68,8 +68,7 @@ public class VDIConnection {
 	 * @throws Exception
 	 */
 	private HttpConfiguration buildHttpConfiguration() throws Exception {
-		HttpConfiguration httpConfig = new HttpConfiguration.Builder().setSslConfiguration(buildSslConfiguration())
-				.getConfig();
+		HttpConfiguration httpConfig = new HttpConfiguration.Builder().setSslConfiguration(buildSslConfiguration()).getConfig();
 
 		return httpConfig;
 	}

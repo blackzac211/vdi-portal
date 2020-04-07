@@ -19,7 +19,6 @@ import unist.vdi.account.service.UserVO;
 import unist.vdi.common.CommonSecurity;
 import unist.vdi.vcenter.service.VMService;
 import unist.vdi.vcenter.service.PowerService;
-import unist.vdi.vcenter.service.VCenterAccount;
 import unist.vdi.vcenter.service.VDIConnection;
 import unist.vdi.vcenter.service.CustomVM;
 
@@ -166,24 +165,6 @@ public class VcenterController {
     	} catch(Exception e) {
     		e.printStackTrace();
     	}
-    }
-    
-    public static void main(String[] args) throws Exception {
-    	VDIConnection conn = new VDIConnection(VCenterAccount.server, VCenterAccount.id, VCenterAccount.pwd, true);
-    	conn.login();
-    	
-    	// ManagedObjectReference mor = conn.getVimAuthHelper().getServiceContent().getRootFolder();
-    	// System.out.println("mor: " + mor.getType());
-    	ManagedObjectReference mor = new ManagedObjectReference();
-    	mor.setType("VirtualMachine");
-    	mor.setValue("vm-1464");
-    	
-    	
-    	
-    	System.out.println("mor : " + mor.toString());
-    	VirtualMachineTicket vmTicket = conn.getVimAuthHelper().getVimPort().acquireTicket(mor, "webmks");
-    	System.out.println("ticket : " + vmTicket.getTicket());
-    	System.out.println("host : " + vmTicket.getHost());
     }
 }
 

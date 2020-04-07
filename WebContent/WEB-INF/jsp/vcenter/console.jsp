@@ -14,52 +14,8 @@
 	if (!window.console) {
 		console = {log: function() {} };
 	}
-</script>
-</head>
-<body>
-
-<!-- Page bar -->
-<div id="bar">
-	<div id="buttonBar">
-		<div class="buttonC">
-			<button id="keyboard" data-toggle="false" data-alt="US 키보드 레이아웃 적용 중지">
-			US 키보드 레이아웃 적용
-			</button>
-			<button id="fullscreen">
-				전체 화면 보기
-			</button>
-			<button id="cad">
-				Ctrl+Alt+Delete 보내기
-			</button>
-		</div>
-	</div>
-	<div id="vmName">
-		<span id="vmTitle">${vmName}</span>
-	</div>
-</div>
-
-<!-- WMKS container -->
-<div id="container"></div>
-
-<!-- Spinner markup -->
-<div id="spinner">
-	<div class="bar1"></div>
-	<div class="bar2"></div>
-	<div class="bar3"></div>
-	<div class="bar4"></div>
-	<div class="bar5"></div>
-	<div class="bar6"></div>
-	<div class="bar7"></div>
-	<div class="bar8"></div>
-	<div class="bar9"></div>
-	<div class="bar10"></div>
-	<div class="bar11"></div>
-	<div class="bar12"></div>
-</div>
-
-<script>
+	
 	$(function() {
-
 		function layout() {
 			var w = $(window).width();
 			var h = $(window).height();
@@ -144,6 +100,13 @@
 		});
 		wmks.register(WMKS.CONST.Events.ERROR, function(evt, data) {
 			console.log("Error: " + data.errorType);
+			location.href = "/files/certs.zip";
+			var str = "<div>비정상적인 접근 입니다.</div>";
+			str += "<div>신뢰할 수 있는 루트 인증 기관에 루트 인증서(certs.zip)를 추가하시기 바랍니다.</div>";
+			str += "<br/><br/>";
+			str += "<div>문의: 정보기술팀(1437), security@unist.ac.kr</div>";
+			$("body").css("font-size", "30px");
+			$("body").html(str);
 		});
 		wmks.register(WMKS.CONST.Events.REMOTE_SCREEN_SIZE_CHANGE, function(evt, data) {
 			layout();
@@ -183,35 +146,52 @@
 			dataType:"json", 
 			async:true,
 			success:function(data) {
-				try {
-					wmks.connect("wss://"+data.host+":"+data.port+"/ticket/" + data.ticket);
-				} catch(e) {
-					console("error: " + e);
-					alert("인증서 오류 발생");
-				}
-				
+				wmks.connect("wss://"+data.host+":"+data.port+"/ticket/" + data.ticket);
 				hideLoading();
 			}
 		});
-		
-		// if params are provided, no need to show chrome
-
-		// var loc = document.location;
-		// var path = loc.host + loc.pathname.replace(/\.html$/, "");
-		
-		
-		
-		/*
-		wmks.connect("wss://"+map.vcenter+"/ui/webconsole/authd?" +
-			"host=" + map.Host +
-			"&port=" + map.Port +
-			"&cfgFile=" + encodeURIComponent(map.CfgFile) +
-			"&thumbprint=" + map.SslThumbprint +
-			"&ticket=" + map.Ticket +
-	        "&vmId=" + vmId + 
-			"&encoding=UTF-8");
-		*/
 	});
 </script>
+</head>
+<body>
+
+<!-- Page bar -->
+<div id="bar">
+	<div id="buttonBar">
+		<div class="buttonC">
+			<button id="keyboard" data-toggle="false" data-alt="US 키보드 레이아웃 적용 중지">
+			US 키보드 레이아웃 적용
+			</button>
+			<button id="fullscreen">
+				전체 화면 보기
+			</button>
+			<button id="cad">
+				Ctrl+Alt+Delete 보내기
+			</button>
+		</div>
+	</div>
+	<div id="vmName">
+		<span id="vmTitle">${vmName}</span>
+	</div>
+</div>
+
+<!-- WMKS container -->
+<div id="container"></div>
+
+<!-- Spinner markup -->
+<div id="spinner">
+	<div class="bar1"></div>
+	<div class="bar2"></div>
+	<div class="bar3"></div>
+	<div class="bar4"></div>
+	<div class="bar5"></div>
+	<div class="bar6"></div>
+	<div class="bar7"></div>
+	<div class="bar8"></div>
+	<div class="bar9"></div>
+	<div class="bar10"></div>
+	<div class="bar11"></div>
+	<div class="bar12"></div>
+</div>
 </body>
 </html>

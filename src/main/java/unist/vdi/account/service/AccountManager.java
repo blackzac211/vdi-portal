@@ -2,6 +2,8 @@ package unist.vdi.account.service;
 
 import javax.servlet.http.HttpSession;
 
+import unist.vdi.vcenter.service.VDIConnection;
+
 public class AccountManager {
 	public static UserVO getUserByEmployeeNumber() {
 		UserVO user = new UserVO();
@@ -11,9 +13,10 @@ public class AccountManager {
 	
 	public static boolean isLogin(HttpSession session) {
 		try {
+			VDIConnection vdiConn = (VDIConnection)session.getAttribute("vdiConn");
 			UserVO user = (UserVO)session.getAttribute("user");
 			// TmaxSSOToken token = (TmaxSSOToken)session.getAttribute("__tmax_eam_token__");
-			if(user != null) {
+			if(user != null && vdiConn != null) {
 				return true;
 			}
 			return false;
