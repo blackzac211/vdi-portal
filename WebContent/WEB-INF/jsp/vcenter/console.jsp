@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<div id="vmName">
-		<span id="vmTitle">blackzac-p02</span>
+		<span id="vmTitle">${vmName}</span>
 	</div>
 </div>
 
@@ -183,8 +183,13 @@
 			dataType:"json", 
 			async:true,
 			success:function(data) {
-				map = data.map;
-				wmks.connect("wss://"+map.Host+":"+map.Port+"/ticket/" + map.Ticket);
+				try {
+					wmks.connect("wss://"+data.host+":"+data.port+"/ticket/" + data.ticket);
+				} catch(e) {
+					console("error: " + e);
+					alert("인증서 오류 발생");
+				}
+				
 				hideLoading();
 			}
 		});

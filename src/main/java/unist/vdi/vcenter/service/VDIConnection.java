@@ -9,6 +9,7 @@ import com.vmware.vapi.protocol.HttpConfiguration.SslConfiguration;
 
 import vmware.samples.common.SslUtil;
 import vmware.samples.common.authentication.VapiAuthenticationHelper;
+import vmware.samples.common.authentication.VimAuthenticationHelper;
 
 public class VDIConnection {
 	private String server;
@@ -17,7 +18,7 @@ public class VDIConnection {
 	private boolean skipServerVerification;
 	private String truststorePath;
 	private String truststorePassword;
-	// private VimAuthenticationHelper vimAuthHelper;
+	private VimAuthenticationHelper vimAuthHelper;
 	private VapiAuthenticationHelper vapiAuthHelper;
 	private StubConfiguration sessionStubConfig;
 	
@@ -35,6 +36,10 @@ public class VDIConnection {
 		return sessionStubConfig;
 	}
 	
+	public VimAuthenticationHelper getVimAuthHelper() {
+		return vimAuthHelper;
+	}
+	
 	/**
 	 * Creates a session with the server using username/password.
 	 *
@@ -49,13 +54,11 @@ public class VDIConnection {
 	 */
 	public void login() throws Exception {
 		this.vapiAuthHelper = new VapiAuthenticationHelper();
-		// this.vimAuthHelper = new VimAuthenticationHelper();
+		this.vimAuthHelper = new VimAuthenticationHelper();
 		HttpConfiguration httpConfig = buildHttpConfiguration();
-
-		this.sessionStubConfig = vapiAuthHelper.loginByUsernameAndPassword(this.server, this.username, this.password,
-				httpConfig);
-
-		// this.vimAuthHelper.loginByUsernameAndPassword(this.server, this.username, this.password);
+		
+		this.sessionStubConfig = vapiAuthHelper.loginByUsernameAndPassword(this.server, this.username, this.password, httpConfig);
+		this.vimAuthHelper.loginByUsernameAndPassword(this.server, this.username, this.password);
 	}
 
 	/**
@@ -142,6 +145,6 @@ public class VDIConnection {
 	 */
 	public void logout() throws Exception {
 		this.vapiAuthHelper.logout();
-		// this.vimAuthHelper.logout();
+		this.vimAuthHelper.logout();
 	}
 }

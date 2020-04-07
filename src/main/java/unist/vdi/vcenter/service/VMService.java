@@ -13,30 +13,26 @@ import vmware.samples.vcenter.helpers.ClusterHelper;
 import vmware.samples.vcenter.helpers.DatacenterHelper;
 import vmware.samples.vcenter.helpers.FolderHelper;
 
-public class ListVMsService {
-	private VM vmService;
-	private Identity identity;
-	private String vmFolderName;
-	private String datacenterName;
-	private String clusterName;
-
-	private List<CustomVM> resList;
-	private List<Summary> list;
+public class VMService {
 	
+	public String getVMName(String vmId, VDIConnection conn) throws Exception {
+		VM vm = conn.getVapiAuthHelper().getStubFactory().createStub(VM.class, conn.getSessionStubConfig());
+		return vm.get(vmId).getName();
+	}
 	
 	public List<CustomVM> getVMList(String userId, VDIConnection conn) {
 		try {
-			vmFolderName = "";
-			datacenterName = "";
-			clusterName = "";
+			String vmFolderName = "";
+			String datacenterName = "";
+			String clusterName = "";
 
-			vmService = conn.getVapiAuthHelper().getStubFactory().createStub(VM.class, conn.getSessionStubConfig());
-			identity = conn.getVapiAuthHelper().getStubFactory().createStub(Identity.class, conn.getSessionStubConfig());
+			VM vm = conn.getVapiAuthHelper().getStubFactory().createStub(VM.class, conn.getSessionStubConfig());
+			Identity identity = conn.getVapiAuthHelper().getStubFactory().createStub(Identity.class, conn.getSessionStubConfig());
 
 			Builder bldr = new Builder();
 			if (null != datacenterName && !datacenterName.isEmpty()) {
 				bldr.setDatacenters(Collections.singleton(DatacenterHelper.getDatacenter(
-						conn.getVapiAuthHelper().getStubFactory(), conn.getSessionStubConfig(), this.datacenterName)));
+						conn.getVapiAuthHelper().getStubFactory(), conn.getSessionStubConfig(), datacenterName)));
 			}
 			if (null != clusterName && !clusterName.isEmpty()) {
 				bldr.setClusters(Collections.singleton(ClusterHelper.getCluster(
@@ -46,8 +42,8 @@ public class ListVMsService {
 				bldr.setFolders(Collections.singleton(FolderHelper.getFolder(conn.getVapiAuthHelper().getStubFactory(),
 						conn.getSessionStubConfig(), vmFolderName)));
 			}
-			list = this.vmService.list(bldr.build());
-			resList = new ArrayList<CustomVM>();
+			List<Summary> list = vm.list(bldr.build());
+			List<CustomVM> resList = new ArrayList<CustomVM>();
 
 			for (Summary vmSummary : list) {
 				if (vmSummary.getName().startsWith(userId + "-")) {

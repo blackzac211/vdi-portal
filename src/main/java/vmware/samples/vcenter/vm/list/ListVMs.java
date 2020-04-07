@@ -103,7 +103,6 @@ public class ListVMs extends SamplesAbstractBase {
     	
         vmService = vapiAuthHelper.getStubFactory().createStub(VM.class, sessionStubConfig);
         identity = vapiAuthHelper.getStubFactory().createStub(Identity.class, sessionStubConfig);
-        
         System.out.println(df.format(Calendar.getInstance().getTime()) + " : setup() end");
     }
 
