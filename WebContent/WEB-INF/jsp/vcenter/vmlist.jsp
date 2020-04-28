@@ -13,6 +13,7 @@
 	#common-btn-area { margin:20px 0 20px 0; text-align:center; }
 	
 	@media ( max-width: 980px ) {
+		#common-table td .powerimg { display:none; }
 		#common-table td .button { display:block; }
 	}
 	@media ( max-width: 480px ) {
@@ -46,8 +47,8 @@
 					str += "<td><img class='powerimg' src='' /> "+item.name+"</td>";
 					str += "<td class='t_c'>"+item.ipAddress+"</td>";
 					str += "<td class='t_c'>"+item.powerState+"</td>";
+					str += "<td class='t_c'><span class='button' onclick='downloadFile(\""+item.ipAddress+"\")'>Connect</span></td>";
 					str += "<td class='td-control t_c'>";
-					// str += "<span class='button' onclick='downloadFile(\""+item.ipAddress+"\")'>Connect</span> ";
 					str += "<span class='button' onclick='reset(\""+item.vm+"\")'>Restart</span> ";
 					str += "<span class='button ctlbtn'></span> ";
 					str += "<span class='button' onclick='console(\""+item.vm+"\")'>Console</span></td>";
@@ -139,8 +140,9 @@
 	<div id="content">
 		<table id="common-table">
 			<colgroup>
-				<col width="35%" />
-				<col width="20%" />
+				<col width="25%" />
+				<col width="15%" />
+				<col width="15%" />
 				<col width="15%" />
 				<col width="30%" />
 			</colgroup>
@@ -148,6 +150,7 @@
 				<th>PC Name</th>
 				<th>IP</th>
 				<th>State</th>
+				<th>Connection</th>
 				<th>Control</th>
 			</tr>
 			<tbody id="common-tbody">

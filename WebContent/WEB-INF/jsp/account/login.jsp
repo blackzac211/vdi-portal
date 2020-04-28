@@ -12,7 +12,7 @@
 	#loginwrap { float:right; width:480px; height:460px; border:1px solid #dddddd; }
 	#loginwrap form { margin:60px 70px 60px 70px; }
 	#loginwrap header { font-size:26px; margin-bottom:27px; }
-	#loginwrap li input { width:100%; font-size:16px; height:45px; border:0; border-bottom:2px solid #dddddd; }
+	#loginwrap li input { padding-left:10px; width:calc(100% - 10px); font-size:16px; height:45px; border:0; border-bottom:2px solid #dddddd; }
 	#loginwrap li input:focus { outline:none; border-color:#000; } 
 	#loginwrap #loginbtn { margin-top:42px; width:100%; height:50px; border:0; border-radius:5px; font-size:18px; background-color:#001C54; color:#ffffff; }
 

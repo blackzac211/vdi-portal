@@ -39,7 +39,11 @@ public class FileController {
 			// insertDownloadLog(vo, session);
 			
 	    	// 파일 생성
-    		File file = new File("E:\\converter\\ConnectPC.bat");
+	    	SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmmss");
+	    	Calendar cal = Calendar.getInstance();
+	    	String fileName = df.format(cal.getTime());
+	    	
+    		File file = new File("E:\\temp\\"+fileName+".bat");
 	    	FileWriter writer = new FileWriter(file, false);
 	    	writer.write("@echo off\n");
 	    	// 자격 증명 삭제
@@ -52,11 +56,8 @@ public class FileController {
 	    	writer.write("exit");
 	    	writer.flush();
 	    	writer.close();
-	    	
+	    	/*
 	    	// EXE 파일 생성
-	    	SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmmss");
-	    	Calendar cal = Calendar.getInstance();
-	    	String dirName = df.format(cal.getTime());
 	    	File dir = new File("E:\\converter\\" + dirName);
 	    	if(!dir.exists())
 	    		dir.mkdir();
@@ -72,17 +73,21 @@ public class FileController {
 			process.waitFor();
 			
 			File exeFile = new File("E:\\converter\\"+dirName+"\\ConnectPC.exe");
-			
+			*/
 			response.setContentType("application/octet-stream");
-			response.setContentLengthLong((long)exeFile.length());
+			response.setContentLengthLong((long)file.length());
 			response.setHeader("Content-Transfer-Encoding", "binary");
-			response.setHeader("Content-Disposition", "attachment; fileName=\"ConnectPC.exe\";");
+			response.setHeader("Content-Disposition", "attachment; fileName=\"ConnectVM.bat\";");
 		
 			OutputStream out = response.getOutputStream();
-			FileInputStream in = new FileInputStream(exeFile);
+			FileInputStream in = new FileInputStream(file);
 			FileCopyUtils.copy(in, out);
 			in.close();
 			out.flush();
+			
+			// 10초 후 파일 삭제
+			Thread.sleep(1000 * 10);
+			file.delete();
 		} catch(Exception e) {
 			try {
 				response.setContentType("text/html; charset=utf-8");
@@ -91,11 +96,4 @@ public class FileController {
 			} catch(Exception ex) {}
 		}
     }
-	
-	
-	
-	public static void main(String[] args) throws Exception {
-		
-		
-	}
 }
