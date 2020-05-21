@@ -43,6 +43,7 @@
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
 		</user-data-constraint>
 	</security-constraint>
+	
 	 
 	<!-- POST 한글 처리 -->
 	<filter>
@@ -62,13 +63,14 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- 세션 타임아웃 1시간으로 설정 -->
+	<!-- 세션 타임아웃 30분으로 설정 -->
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
 	
-	<!-- 세션 종료 시 처리 -->
+	<!-- 세션 종료 시 처리 
 	<listener>
 		<listener-class>unist.vdi.common.CustomSessionListener</listener-class>
 	</listener>
+	-->
 </web-app>

@@ -16,7 +16,8 @@ public class LDAPManager {
 	private DirContext ctx = null;
 	private final String[] BASE_DN = {"ou=울산과학기술원,dc=unist,dc=ac,dc=kr",
 										"ou=특별법인 울산과학기술원,dc=unist,dc=ac,dc=kr",
-										"ou=외부인력,dc=unist,dc=ac,dc=kr"};
+										"ou=외부인력,dc=unist,dc=ac,dc=kr",
+										"ou=VDI사용자,dc=unist,dc=ac,dc=kr"};
 	
 	public LDAPManager() {
 		env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");

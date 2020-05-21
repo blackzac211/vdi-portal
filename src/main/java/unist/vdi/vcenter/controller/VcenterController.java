@@ -27,7 +27,7 @@ import unist.vdi.vcenter.service.CustomVM;
 public class VcenterController {
 	
 	@RequestMapping("/vcenter/vmlist.do")
-    public String list(HttpSession session) throws Exception {
+    public String vmlist(HttpSession session) throws Exception {
 		if(!AccountManager.isLogin(session)) {
 			return "/account/redirect_login";
 		} else {
@@ -40,7 +40,7 @@ public class VcenterController {
 		if(!AccountManager.isLogin(session)) {
 			return "/account/redirect_login";
 		} else {
-			VDIConnection conn = (VDIConnection)session.getAttribute("vdiConn");
+			VDIConnection conn = VDIConnection.getInstance();
 			String vmName = new VMService().getVMName(vmId, conn);
 			UserVO user = (UserVO)session.getAttribute("user");
 			
@@ -51,6 +51,15 @@ public class VcenterController {
 			return "/common/error";
 		}
     }
+	
+	@RequestMapping("/vcenter/console_cert.do")
+    public String console_cert(HttpServletRequest request, HttpSession session) throws Exception {
+		if(!AccountManager.isLogin(session)) {
+			return "/account/redirect_login";
+		} else {
+			return "/vcenter/console_cert";
+		}
+    }
     
     @RequestMapping("/vcenter/selectVMListByUser.do")
     public void selectVMListByUser(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
@@ -59,11 +68,10 @@ public class VcenterController {
     			throw new Exception("Exploiting cross-site scripting in Referer header.");
     		}
     		if(!AccountManager.isLogin(session)) {
-    			throw new Exception();
+    			throw new Exception("isLogin");
     		}
-    		
     		UserVO user = (UserVO)session.getAttribute("user");
-    		VDIConnection conn = (VDIConnection)session.getAttribute("vdiConn");
+    		VDIConnection conn = VDIConnection.getInstance();
     		List<CustomVM> list = new VMService().getVMList(user.getId(), conn);
     		
     		JSONObject json = new JSONObject();
@@ -85,7 +93,7 @@ public class VcenterController {
     		if(!AccountManager.isLogin(session)) {
     			throw new Exception();
     		}
-    		VDIConnection conn = (VDIConnection)session.getAttribute("vdiConn");
+    		VDIConnection conn = VDIConnection.getInstance();
     		new PowerService().powerOn(vmId, conn);
     		
     		JSONObject json = new JSONObject();
@@ -106,7 +114,7 @@ public class VcenterController {
     		if(!AccountManager.isLogin(session)) {
     			throw new Exception();
     		}
-    		VDIConnection conn = (VDIConnection)session.getAttribute("vdiConn");
+    		VDIConnection conn = VDIConnection.getInstance();
     		new PowerService().powerOff(vmId, conn);
     		
     		JSONObject json = new JSONObject();
@@ -127,7 +135,7 @@ public class VcenterController {
     		if(!AccountManager.isLogin(session)) {
     			throw new Exception();
     		}
-    		VDIConnection conn = (VDIConnection)session.getAttribute("vdiConn");
+    		VDIConnection conn = VDIConnection.getInstance();
     		new PowerService().reset(vmId, conn);
     		
     		JSONObject json = new JSONObject();
@@ -148,8 +156,7 @@ public class VcenterController {
     		if(!AccountManager.isLogin(session)) {
     			throw new Exception();
     		}
-    		
-    		VDIConnection conn = (VDIConnection)session.getAttribute("vdiConn");
+    		VDIConnection conn = VDIConnection.getInstance();
     		ManagedObjectReference mor = new ManagedObjectReference();
         	mor.setType("VirtualMachine");
         	mor.setValue(vmId);

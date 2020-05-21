@@ -31,7 +31,7 @@
 <script type="text/javascript">
 	var user = "${user}";
 	if(user != null && user != "") {
-		location.href = "/release/tree.do";
+		location.href = "/vcenter/vmlist.do";
 	}
 
 	function processLogin() {

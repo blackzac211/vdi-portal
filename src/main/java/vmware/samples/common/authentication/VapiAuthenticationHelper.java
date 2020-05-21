@@ -25,165 +25,146 @@ import com.vmware.vapi.saml.SamlToken;
 import com.vmware.vapi.security.SessionSecurityContext;
 
 /**
- * Helper class which provides methods for
- * 1. login/logout using username, password authentication.
- * 2. getting authenticated stubs for client-side interfaces.
+ * Helper class which provides methods for 1. login/logout using username,
+ * password authentication. 2. getting authenticated stubs for client-side
+ * interfaces.
  */
 public class VapiAuthenticationHelper {
-    private Session sessionSvc;
-    private StubFactory stubFactory;
-    public static final String VAPI_PATH = "/api";
+	private Session sessionSvc;
+	private StubFactory stubFactory;
+	public static final String VAPI_PATH = "/api";
+	
+	
+	/**
+	 * Creates a session with the server using username and password
+	 *
+	 * @param server     hostname or ip address of the server to log in to
+	 * @param username   username for login
+	 * @param password   password for login
+	 * @param httpConfig HTTP configuration settings to be applied for the
+	 *                   connection to the server.
+	 *
+	 * @return the stub configuration configured with an authenticated session
+	 * @throws Exception if there is an existing session
+	 */
+	public StubConfiguration loginByUsernameAndPassword(String server, String username, String password, HttpConfiguration httpConfig) throws Exception {
+		if(sessionSvc != null) {
+			throw new Exception("Session already created");
+		}
 
-    /**
-     * Creates a session with the server using username and password
-     *
-     * @param server hostname or ip address of the server to log in to
-     * @param username username for login
-     * @param password password for login
-     * @param httpConfig HTTP configuration settings to be applied
-     * for the connection to the server.
-     *
-     * @return the stub configuration configured with an authenticated session
-     * @throws Exception if there is an existing session
-     */
-    public StubConfiguration loginByUsernameAndPassword(
-        String server, String username, String password,
-        HttpConfiguration httpConfig)
-            throws Exception {
-        if(this.sessionSvc != null) {
-            throw new Exception("Session already created");
-        }
+		stubFactory = createApiStubFactory(server, httpConfig);
 
-        this.stubFactory = createApiStubFactory(server, httpConfig);
+		// Create a security context for username/password authentication
+		SecurityContext securityContext = SecurityContextFactory.createUserPassSecurityContext(username, password.toCharArray());
 
-        // Create a security context for username/password authentication
-        SecurityContext securityContext =
-                SecurityContextFactory.createUserPassSecurityContext(
-                    username, password.toCharArray());
+		// Create a stub configuration with username/password security context
+		StubConfiguration stubConfig = new StubConfiguration(securityContext);
 
-        // Create a stub configuration with username/password security context
-        StubConfiguration stubConfig = new StubConfiguration(securityContext);
+		// Create a session stub using the stub configuration.
+		Session session = stubFactory.createStub(Session.class, stubConfig);
 
-        // Create a session stub using the stub configuration.
-        Session session =
-                this.stubFactory.createStub(Session.class, stubConfig);
+		// Login and create a session
+		char[] sessionId = session.create();
+		
+		// Initialize a session security context from the generated session id
+		SessionSecurityContext sessionSecurityContext = new SessionSecurityContext(sessionId);
 
-        // Login and create a session
-        char[] sessionId = session.create();
+		// Update the stub configuration to use the session id
+		stubConfig.setSecurityContext(sessionSecurityContext);
 
-        // Initialize a session security context from the generated session id
-        SessionSecurityContext sessionSecurityContext =
-                new SessionSecurityContext(sessionId);
+		/*
+		 * Create a stub for the session service using the authenticated session
+		 */
+		sessionSvc = stubFactory.createStub(Session.class, stubConfig);
 
-        // Update the stub configuration to use the session id
-        stubConfig.setSecurityContext(sessionSecurityContext);
+		return stubConfig;
+	}
 
-        /*
-         * Create a stub for the session service using the authenticated
-         * session
-         */
-        this.sessionSvc =
-                this.stubFactory.createStub(Session.class, stubConfig);
+	/**
+	 * Creates a session with the server using SAML Bearer Token
+	 *
+	 * @param server          hostname or ip address of the server to log in to
+	 * @param samlBearerToken a SAML bearer token
+	 * @param httpConfig      HTTP configuration settings to be applied for the
+	 *                        connection to the server.
+	 *
+	 * @return the stub configuration configured with an authenticated session
+	 * @throws Exception
+	 */
+	public StubConfiguration loginBySamlBearerToken(String server, SamlToken samlBearerToken, HttpConfiguration httpConfig) throws Exception {
+		if(sessionSvc != null) {
+			throw new Exception("Session already created");
+		}
 
-        return stubConfig;
-    }
+		stubFactory = createApiStubFactory(server, httpConfig);
 
-    /**
-     * Creates a session with the server using SAML Bearer Token
-     *
-     * @param server hostname or ip address of the server to log in to
-     * @param samlBearerToken a SAML bearer token
-     * @param httpConfig HTTP configuration settings to be applied
-     * for the connection to the server.
-     *
-     * @return the stub configuration configured with an authenticated session
-     * @throws Exception
-     */
-    public StubConfiguration loginBySamlBearerToken(
-        String server, SamlToken samlBearerToken, HttpConfiguration httpConfig)
-            throws Exception {
-        if(this.sessionSvc != null) {
-            throw new Exception("Session already created");
-        }
+		// Create a SAML security context using SAML bearer token
+		SecurityContext samlSecurityContext = SecurityContextFactory.createSamlSecurityContext(samlBearerToken, null);
 
-        this.stubFactory = createApiStubFactory(server, httpConfig);
+		// Create a stub configuration with SAML security context
+		StubConfiguration stubConfig = new StubConfiguration(samlSecurityContext);
 
-        // Create a SAML security context using SAML bearer token
-        SecurityContext samlSecurityContext =
-                SecurityContextFactory.createSamlSecurityContext(
-                    samlBearerToken, null);
+		// Create a session stub using the stub configuration.
+		Session session = stubFactory.createStub(Session.class, stubConfig);
 
-        // Create a stub configuration with SAML security context
-        StubConfiguration stubConfig =
-                new StubConfiguration(samlSecurityContext);
+		// Login and create a session
+		char[] sessionId = session.create();
+		
+		// Initialize a session security context from the generated session id
+		SessionSecurityContext sessionSecurityContext = new SessionSecurityContext(sessionId);
 
-        // Create a session stub using the stub configuration.
-        Session session =
-                this.stubFactory.createStub(Session.class, stubConfig);
+		// Update the stub configuration to use the session id
+		stubConfig.setSecurityContext(sessionSecurityContext);
+		
+		/*
+		 * Create a stub for the session service using the authenticated session
+		 */
+		sessionSvc = stubFactory.createStub(Session.class, stubConfig);
 
-        // Login and create a session
-        char[] sessionId = session.create();
+		return stubConfig;
+	}
 
-        // Initialize a session security context from the generated session id
-        SessionSecurityContext sessionSecurityContext =
-                new SessionSecurityContext(sessionId);
+	/**
+	 * Logs out of the current session.
+	 */
+	public void logout() throws Exception {
+		if(sessionSvc != null) {
+			sessionSvc.delete();
+		}
+		sessionSvc = null;
+		stubFactory = null;
+	}
 
-        // Update the stub configuration to use the session id
-        stubConfig.setSecurityContext(sessionSecurityContext);
+	/**
+	 * Connects to the server using https protocol and returns the factory instance
+	 * that can be used for creating the client side stubs.
+	 *
+	 * @param server     hostname or ip address of the server
+	 * @param httpConfig HTTP configuration settings to be applied for the
+	 *                   connection to the server.
+	 *
+	 * @return factory for the client side stubs
+	 */
+	private StubFactory createApiStubFactory(String server, HttpConfiguration httpConfig) throws Exception {
+		// Create a https connection with the vapi url
+		ProtocolFactory pf = new ProtocolFactory();
+		String apiUrl = "https://" + server + VAPI_PATH;
 
-        /*
-         * Create a stub for the session service using the authenticated
-         * session
-         */
-        this.sessionSvc =
-                this.stubFactory.createStub(Session.class, stubConfig);
+		// Get a connection to the vapi url
+		ProtocolConnection connection = pf.getHttpConnection(apiUrl, null, httpConfig);
 
-        return stubConfig;
-    }
+		// Initialize the stub factory with the api provider
+		ApiProvider provider = connection.getApiProvider();
+		StubFactory stubFactory = new StubFactory(provider);
+		return stubFactory;
+	}
 
-
-    /**
-     * Logs out of the current session.
-     */
-    public void logout() {
-        if (this.sessionSvc != null) {
-            this.sessionSvc.delete();
-        }
-    }
-
-    /**
-     * Connects to the server using https protocol and returns the factory
-     * instance that can be used for creating the client side stubs.
-     *
-     * @param server hostname or ip address of the server
-     * @param httpConfig HTTP configuration settings to be applied
-     * for the connection to the server.
-     *
-     * @return factory for the client side stubs
-     */
-    private StubFactory createApiStubFactory(String server,
-        HttpConfiguration httpConfig)
-            throws Exception {
-        // Create a https connection with the vapi url
-        ProtocolFactory pf = new ProtocolFactory();
-        String apiUrl = "https://" + server + VAPI_PATH;
-
-        // Get a connection to the vapi url
-        ProtocolConnection connection =
-            pf.getHttpConnection(apiUrl, null, httpConfig);
-
-        // Initialize the stub factory with the api provider
-        ApiProvider provider = connection.getApiProvider();
-        StubFactory stubFactory = new StubFactory(provider);
-        return stubFactory;
-    }
-
-    /**
-     * Returns the stub factory for the api endpoint
-     *
-     * @return
-     */
-    public StubFactory getStubFactory() {
-        return this.stubFactory;
-    }
+	/**
+	 * Returns the stub factory for the api endpoint
+	 *
+	 * @return
+	 */
+	public StubFactory getStubFactory() {
+		return stubFactory;
+	}
 }

@@ -14,14 +14,10 @@ import unist.vdi.account.service.LDAPManager;
 import unist.vdi.account.service.UserVO;
 import unist.vdi.common.CommonSecurity;
 import unist.vdi.common.CommonUtil;
-import unist.vdi.vcenter.service.VCenterAccount;
-import unist.vdi.vcenter.service.VDIConnection;
-
 
 
 @Controller
-public class AccountController {	
-			
+public class AccountController {
 	@RequestMapping("/account/login.do")
     public String login(Model model, HttpSession session) throws Exception {
 		model.addAttribute("user", (UserVO)session.getAttribute("user"));
@@ -36,7 +32,7 @@ public class AccountController {
     		}
     		LDAPManager ldap = new LDAPManager();
     		if(!ldap.authenticate(username, password)) {
-    			throw new Exception();
+    			throw new Exception("Exception ldap.authenticate()");
     		}
     		
     		Attributes attrs = ldap.searchUser("sAMAccountName", username);
@@ -51,20 +47,11 @@ public class AccountController {
 			user.setIp(CommonUtil.getUserIP(request));
 			session.setAttribute("user", user);
 			
-			// vcenter 커넥션 세션 생성
-			VDIConnection vdiConn = new VDIConnection(VCenterAccount.server, VCenterAccount.id, VCenterAccount.pwd, true);
-			vdiConn.login();
-			// VDIConnection vdiInConn = new VDIConnection(VCenterAccount.in_server, VCenterAccount.in_id, VCenterAccount.in_pwd, true);
-			// vdiInConn.login();
-			
-			session.setAttribute("vdiConn", vdiConn);
-			// session.setAttribute("vdiInConn", vdiInConn);
-			
         	JSONObject json = new JSONObject();
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {
-    		System.err.println("Incorrect username or password.");
+    		CommonUtil.writeErrorLogs("login exception: " + e.getMessage());
     	}
     }
 }

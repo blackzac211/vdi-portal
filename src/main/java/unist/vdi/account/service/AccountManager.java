@@ -13,10 +13,12 @@ public class AccountManager {
 	
 	public static boolean isLogin(HttpSession session) {
 		try {
-			VDIConnection vdiConn = (VDIConnection)session.getAttribute("vdiConn");
+			// VDIConnection vdiConn = (VDIConnection)session.getAttribute("vdiConn");
 			UserVO user = (UserVO)session.getAttribute("user");
 			// TmaxSSOToken token = (TmaxSSOToken)session.getAttribute("__tmax_eam_token__");
-			if(user != null && vdiConn != null) {
+			// if(user != null && vdiConn != null) {
+			
+			if(user != null) {
 				return true;
 			}
 			return false;

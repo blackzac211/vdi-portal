@@ -7,37 +7,63 @@ import com.vmware.vapi.protocol.HttpConfiguration;
 import com.vmware.vapi.protocol.HttpConfiguration.KeyStoreConfig;
 import com.vmware.vapi.protocol.HttpConfiguration.SslConfiguration;
 
+import unist.vdi.common.CommonUtil;
 import vmware.samples.common.SslUtil;
 import vmware.samples.common.authentication.VapiAuthenticationHelper;
 import vmware.samples.common.authentication.VimAuthenticationHelper;
 
 public class VDIConnection {
-	private String server;
-	private String username;
-	private String password;
-	private boolean skipServerVerification;
+	private final String server = "vdi-vc.unist.ac.kr";
+	private final String username = "administrator@vsphere.local";
+	private final String password = "Un!s7i!vc";
+	private final boolean skipServerVerification = true;
+	
 	private String truststorePath;
 	private String truststorePassword;
 	private VimAuthenticationHelper vimAuthHelper;
 	private VapiAuthenticationHelper vapiAuthHelper;
 	private StubConfiguration sessionStubConfig;
 	
-	public VDIConnection(String server, String username, String password, boolean skipServerVerification) {
-		this.server = server;
-		this.username = username;
-		this.password = password;
-		this.skipServerVerification = skipServerVerification;
+	private HttpConfiguration httpConfig;
+	
+	private static VDIConnection instance;
+	
+	
+	/*
+	private static class InnerInstance {
+		private static final VDIConnection instance = new VDIConnection();
+	}
+	*/
+	
+	synchronized public static void initInstance() {
+		if(instance != null) {
+			instance.logout();
+		}
+		instance = new VDIConnection();
+		instance.login();
 	}
 	
-	public VapiAuthenticationHelper getVapiAuthHelper() {
-		return vapiAuthHelper;
-	}
-	public StubConfiguration getSessionStubConfig() {
-		return sessionStubConfig;
+	synchronized public static VDIConnection getInstance() {
+		if(instance == null) {
+			instance = new VDIConnection();
+			instance.login();
+		}
+		return instance;
 	}
 	
-	public VimAuthenticationHelper getVimAuthHelper() {
-		return vimAuthHelper;
+	/**
+	 * Logs out of the server
+	 * 
+	 * @throws Exception
+	 */
+	private void logout() {
+		try {
+			vapiAuthHelper.logout();
+			vimAuthHelper.logout();
+			instance = null;
+		} catch(Exception e) {
+			CommonUtil.writeErrorLogs("logout exception: " + e.getMessage());
+		}
 	}
 	
 	/**
@@ -52,13 +78,17 @@ public class VDIConnection {
 	 * 
 	 * @throws Exception
 	 */
-	public void login() throws Exception {
-		this.vapiAuthHelper = new VapiAuthenticationHelper();
-		this.vimAuthHelper = new VimAuthenticationHelper();
-		HttpConfiguration httpConfig = buildHttpConfiguration();
-		
-		this.sessionStubConfig = vapiAuthHelper.loginByUsernameAndPassword(this.server, this.username, this.password, httpConfig);
-		this.vimAuthHelper.loginByUsernameAndPassword(this.server, this.username, this.password);
+	private void login() {
+		try {
+			vapiAuthHelper = new VapiAuthenticationHelper();
+			vimAuthHelper = new VimAuthenticationHelper();
+			httpConfig = buildHttpConfiguration();
+			
+			sessionStubConfig = vapiAuthHelper.loginByUsernameAndPassword(server, username, password, httpConfig);
+			vimAuthHelper.loginByUsernameAndPassword(server, username, password);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -102,7 +132,7 @@ public class VDIConnection {
 	protected SslConfiguration buildSslConfiguration() throws Exception {
 		SslConfiguration sslConfig;
 
-		if (this.skipServerVerification) {
+		if (skipServerVerification) {
 			/*
 			 * Below method enables all VIM API connections to the server without validating
 			 * the server certificates.
@@ -121,29 +151,28 @@ public class VDIConnection {
 			 * Circumventing SSL trust is unsafe and should not be used in production
 			 * software.
 			 */
-			sslConfig = new SslConfiguration.Builder().disableCertificateValidation().disableHostnameVerification()
-					.getConfig();
+			sslConfig = new SslConfiguration.Builder().disableCertificateValidation().disableHostnameVerification().getConfig();
 		} else {
 			/*
 			 * Set the system property "javax.net.ssl.trustStore" to the truststorePath
 			 */
-			System.setProperty("javax.net.ssl.trustStore", this.truststorePath);
-			KeyStore trustStore = SslUtil.loadTrustStore(this.truststorePath, this.truststorePassword);
-			KeyStoreConfig keyStoreConfig = new KeyStoreConfig("", this.truststorePassword);
-			sslConfig = new SslConfiguration.Builder().setKeyStore(trustStore).setKeyStoreConfig(keyStoreConfig)
-					.getConfig();
+			System.setProperty("javax.net.ssl.trustStore", truststorePath);
+			KeyStore trustStore = SslUtil.loadTrustStore(truststorePath, truststorePassword);
+			KeyStoreConfig keyStoreConfig = new KeyStoreConfig("", truststorePassword);
+			sslConfig = new SslConfiguration.Builder().setKeyStore(trustStore).setKeyStoreConfig(keyStoreConfig).getConfig();
 		}
 
 		return sslConfig;
 	}
-
-	/**
-	 * Logs out of the server
-	 * 
-	 * @throws Exception
-	 */
-	public void logout() throws Exception {
-		this.vapiAuthHelper.logout();
-		this.vimAuthHelper.logout();
+	
+	public VapiAuthenticationHelper getVapiAuthHelper() {
+		return vapiAuthHelper;
+	}
+	public StubConfiguration getSessionStubConfig() {
+		return sessionStubConfig;
+	}
+	
+	public VimAuthenticationHelper getVimAuthHelper() {
+		return vimAuthHelper;
 	}
 }

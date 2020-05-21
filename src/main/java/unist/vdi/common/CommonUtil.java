@@ -1,5 +1,8 @@
 package unist.vdi.common;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class CommonUtil {
@@ -21,5 +24,11 @@ public class CommonUtil {
 			ip = request.getRemoteAddr();
 		}
 		return ip;
+	}
+	
+	public static void writeErrorLogs(String str) {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Calendar cal = Calendar.getInstance();
+		System.err.println(df.format(cal.getTime()) + " - " + str);
 	}
 }

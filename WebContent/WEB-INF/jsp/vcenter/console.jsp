@@ -100,13 +100,7 @@
 		});
 		wmks.register(WMKS.CONST.Events.ERROR, function(evt, data) {
 			console.log("Error: " + data.errorType);
-			location.href = "/files/certs.zip";
-			var str = "<div>비정상적인 접근 입니다.</div>";
-			str += "<div>신뢰할 수 있는 루트 인증 기관에 루트 인증서(certs.zip)를 추가하시기 바랍니다.</div>";
-			str += "<br/><br/>";
-			str += "<div>문의: 정보기술팀(1437), security@unist.ac.kr</div>";
-			$("body").css("font-size", "30px");
-			$("body").html(str);
+			location.href = "/vcenter/console_cert.do";
 		});
 		wmks.register(WMKS.CONST.Events.REMOTE_SCREEN_SIZE_CHANGE, function(evt, data) {
 			layout();

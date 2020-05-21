@@ -25,7 +25,7 @@ public class VMService {
 			String vmFolderName = "";
 			String datacenterName = "";
 			String clusterName = "";
-
+			
 			VM vm = conn.getVapiAuthHelper().getStubFactory().createStub(VM.class, conn.getSessionStubConfig());
 			Identity identity = conn.getVapiAuthHelper().getStubFactory().createStub(Identity.class, conn.getSessionStubConfig());
 

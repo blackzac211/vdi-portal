@@ -97,12 +97,9 @@ public class VimAuthenticationHelper {
     /**
      * Logs out of the current session.
      */
-    public void logout() {
-        try {
+    public void logout() throws Exception {
+    	if (this.vimPort != null) {
             this.vimPort.logout(serviceContent.getSessionManager());
-        } catch (Exception e) {
-            System.out.println(" Connect Failed ");
-            e.printStackTrace();
         }
     }
 
