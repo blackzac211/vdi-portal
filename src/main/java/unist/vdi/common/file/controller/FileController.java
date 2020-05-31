@@ -94,6 +94,7 @@ public class FileController {
 				PrintWriter out = response.getWriter();
 				out.println("<script>alert('Unexpected error occurred in connect task');</script>");
 			} catch(Exception ex) {}
+			e.printStackTrace();
 		}
     }
 }

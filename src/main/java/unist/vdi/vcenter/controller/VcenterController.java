@@ -166,7 +166,7 @@ public class VcenterController {
     		json.put("host", vmTicket.getHost());
     		json.put("port", vmTicket.getPort());
     		json.put("ticket", vmTicket.getTicket());
-        	
+    		
     		response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {

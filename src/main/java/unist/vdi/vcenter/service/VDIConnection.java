@@ -18,22 +18,12 @@ public class VDIConnection {
 	private final String password = "Un!s7i!vc";
 	private final boolean skipServerVerification = true;
 	
-	private String truststorePath;
-	private String truststorePassword;
-	private VimAuthenticationHelper vimAuthHelper;
 	private VapiAuthenticationHelper vapiAuthHelper;
+	private VimAuthenticationHelper vimAuthHelper;
 	private StubConfiguration sessionStubConfig;
-	
-	private HttpConfiguration httpConfig;
 	
 	private static VDIConnection instance;
 	
-	
-	/*
-	private static class InnerInstance {
-		private static final VDIConnection instance = new VDIConnection();
-	}
-	*/
 	
 	synchronized public static void initInstance() {
 		if(instance != null) {
@@ -60,6 +50,7 @@ public class VDIConnection {
 		try {
 			vapiAuthHelper.logout();
 			vimAuthHelper.logout();
+			
 			instance = null;
 		} catch(Exception e) {
 			CommonUtil.writeErrorLogs("logout exception: " + e.getMessage());
@@ -82,7 +73,7 @@ public class VDIConnection {
 		try {
 			vapiAuthHelper = new VapiAuthenticationHelper();
 			vimAuthHelper = new VimAuthenticationHelper();
-			httpConfig = buildHttpConfiguration();
+			HttpConfiguration httpConfig = buildHttpConfiguration();
 			
 			sessionStubConfig = vapiAuthHelper.loginByUsernameAndPassword(server, username, password, httpConfig);
 			vimAuthHelper.loginByUsernameAndPassword(server, username, password);
@@ -130,6 +121,9 @@ public class VDIConnection {
 	 * @throws Exception
 	 */
 	protected SslConfiguration buildSslConfiguration() throws Exception {
+		String truststorePath;
+		String truststorePassword;
+		
 		SslConfiguration sslConfig;
 
 		if (skipServerVerification) {
@@ -171,7 +165,6 @@ public class VDIConnection {
 	public StubConfiguration getSessionStubConfig() {
 		return sessionStubConfig;
 	}
-	
 	public VimAuthenticationHelper getVimAuthHelper() {
 		return vimAuthHelper;
 	}
