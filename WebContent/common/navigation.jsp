@@ -1,25 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
+<script type="text/javascript">
+	function logout() {
+		location.href = "/account/logout.do";
+	}
+</script>
+
 <div id="globalheader">
 	<nav>
 		<div id="globallogo">
 			<strong>VDI Portal</strong>
 		</div>
-		<!-- 
-		<ul id="globalnav">
-			<li>인터넷망</li>
-			<li>업무망</li>
-		</ul>
-		 -->
+		<div id="logout-wrap" onclick="logout()">Logout</div>
 	</nav>
 </div>
 
-<script type="text/javascript">
-	/* 
-	$("#globalnav li").eq(nav).css({"background-color":"#877C", "color":"#fff"});
-	
-	$("#globalnav li").click(function() {
-		location.href = "/vcenter/vmlist.do?nav=" + $(this).index();
-	});
-	 */
-</script>

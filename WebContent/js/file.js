@@ -31,10 +31,11 @@ function uploadFile(parent_id, callback) {
 }
 
 function downloadFile(ipAddress) {
-	$("#download-ifrm").remove();
-	var ifrm = $("<iframe id='download-ifrm' name='download-ifrm' style='width:0;height:0;'></iframe>");
+	$("#download_ifrm").remove();
+	$("#download_form").remove();
+	var ifrm = $("<iframe id='download_ifrm' name='download-ifrm' style='width:0;height:0;'></iframe>");
 	$("body").append(ifrm);
-	var form = $("<form method='post' action='/common/file/downloadFile.do' target='download-ifrm'></form>");
+	var form = $("<form id='download_form' method='post' action='/common/file/downloadFile.do' target='download_ifrm'></form>");
 	$("body").append(form);
 	form.append("<input type='hidden' name='ipAddress' value='"+ipAddress+"' />");
 

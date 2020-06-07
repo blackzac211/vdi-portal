@@ -99,7 +99,7 @@
 			}
 		});
 		wmks.register(WMKS.CONST.Events.ERROR, function(evt, data) {
-			console.log("Error: " + data.errorType);
+			alert("Error: " + data.errorType);
 			location.href = "/vcenter/console_cert.do";
 		});
 		wmks.register(WMKS.CONST.Events.REMOTE_SCREEN_SIZE_CHANGE, function(evt, data) {

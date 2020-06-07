@@ -25,6 +25,7 @@
 <script type="text/javascript">
 	$(function() {
 		showList();
+		setInterval(showList, 60000);
 	});
 	
 	function clickTree(id) {
@@ -39,32 +40,42 @@
 			dataType:"json",
 			async:true,
 			success:function(data) {
-				list = data.list;
-				$("#common-tbody").html("");
+				var list = data.list;
+				var map = data.map;
+				var str = "";
+				
 				for(var i = 0; i < list.length; i++) {
 					var item = list[i];
-					var str = "<tr>";
-					str += "<td><img class='powerimg' src='' /> "+item.name+"</td>";
-					str += "<td class='t_c'>"+item.ipAddress+"</td>";
-					str += "<td class='t_c'>"+item.powerState+"</td>";
-					str += "<td class='t_c'><span class='button' onclick='downloadFile(\""+item.ipAddress+"\")'>Connect</span></td>";
-					str += "<td class='td-control t_c'>";
-					str += "<span class='button' onclick='reset(\""+item.vm+"\")'>Restart</span> ";
-					str += "<span class='button ctlbtn'></span> ";
-					str += "<span class='button' onclick='console(\""+item.vm+"\")'>Console</span></td>";
-					str += "</tr>";
-					$("#common-tbody").append(str);
+					var powerimg;
+					var powerstate;
+					var buttons;
+					var desc = map[item.name];
+					if(typeof desc == "undefined") {
+						desc = "";
+					}
 					
 					if(item.powerState=="POWERED_ON") {
-						$(".ctlbtn").eq(i).html("Turn Off")
-						$(".powerimg").eq(i).attr("src", "/images/power_on.png");
-						$(".ctlbtn").eq(i).attr("onclick", "powerOff('"+item.vm+"')");
+						powerimg = "<img class='powerimg' src='/images/power_on.png' /> ";
+						powerstate = "Power On";
+						buttons = "<span class='button' onclick='powerOff(\""+item.vm+"\")'>Turn Off</span> ";
 					} else {
-						$(".ctlbtn").eq(i).html("Turn On")
-						$(".powerimg").eq(i).attr("src", "/images/power_off.png");
-						$(".ctlbtn").eq(i).attr("onclick", "powerOn('"+item.vm+"')");
+						powerimg = "<img class='powerimg' src='/images/power_off.png' /> ";
+						powerstate = "Power Off";
+						buttons = "<span class='button' onclick='powerOn(\""+item.vm+"\")'>Turn On</span> ";
 					}
+					str += "<tr>";
+					str += "<td>" + powerimg + item.name + "</td>";
+					str += "<td class='t_c'>"+item.ipAddress+"</td>";
+					str += "<td class='t_c'>"+powerstate+"</td>";
+					// str += "<td class='t_c'><span class='button' onclick='downloadFile(\""+item.ipAddress+"\")'>Connect</span></td>";
+					str += "<td class='t_c'>"+desc+"</td>";
+					str += "<td class='t_c'>";
+					str += "<span class='button' onclick='reset(\""+item.vm+"\")'>Restart</span> ";
+					str += buttons;
+					str += "<span class='button' onclick='console(\""+item.vm+"\")'>Console</span></td>";
+					str += "</tr>";
 				}
+				$("#common-tbody").html(str); 
 				hideLoading();
 			}
 		});
@@ -81,7 +92,7 @@
 				async:true,
 				success:function(data) {
 					var result = data.result;
-					alert(result);
+					// alert(result);
 					hideLoading();
 					showList();
 				}
@@ -100,7 +111,7 @@
 				async:true,
 				success:function(data) {
 					var result = data.result;
-					alert(result);
+					// alert(result);
 					hideLoading();
 					showList();
 				}
@@ -119,7 +130,7 @@
 				async:true,
 				success:function(data) {
 					var result = data.result;
-					alert(result);
+					// alert(result);
 					hideLoading();
 					showList();
 				}
@@ -128,8 +139,12 @@
 	}
 	
 	function console(vmId) {
-		var openNewWindow = window.open("about:blank");
-		openNewWindow.location.href = "/vcenter/console.do?vmId=" + vmId;
+		$("#console_form").remove();
+		var openWin = window.open("about:blank", "newWindow");
+		var form = $("<form id='console_form' method='post' action='/vcenter/console.do' target='newWindow'></form>");
+		$("body").append(form);
+		form.append("<input type='hidden' name='vmId' value='"+vmId+"' />");
+		form.submit();
 	}
 </script>
 </head>
@@ -140,17 +155,17 @@
 	<div id="content">
 		<table id="common-table">
 			<colgroup>
+				<col width="22%" />
+				<col width="14%" />
+				<col width="14%" />
 				<col width="25%" />
-				<col width="15%" />
-				<col width="15%" />
-				<col width="15%" />
-				<col width="30%" />
+				<col width="25%" />
 			</colgroup>
 			<tr>
 				<th>PC Name</th>
 				<th>IP</th>
 				<th>State</th>
-				<th>Connection</th>
+				<th>Description</th>
 				<th>Control</th>
 			</tr>
 			<tbody id="common-tbody">

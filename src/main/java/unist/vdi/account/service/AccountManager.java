@@ -2,8 +2,6 @@ package unist.vdi.account.service;
 
 import javax.servlet.http.HttpSession;
 
-import unist.vdi.vcenter.service.VDIConnection;
-
 public class AccountManager {
 	public static UserVO getUserByEmployeeNumber() {
 		UserVO user = new UserVO();

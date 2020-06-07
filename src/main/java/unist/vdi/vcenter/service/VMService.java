@@ -1,7 +1,10 @@
 package unist.vdi.vcenter.service;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import com.vmware.vcenter.VM;
@@ -9,6 +12,7 @@ import com.vmware.vcenter.VMTypes.Summary;
 import com.vmware.vcenter.VMTypes.FilterSpec.Builder;
 import com.vmware.vcenter.vm.guest.Identity;
 
+import unist.vdi.common.DBManager;
 import vmware.samples.vcenter.helpers.ClusterHelper;
 import vmware.samples.vcenter.helpers.DatacenterHelper;
 import vmware.samples.vcenter.helpers.FolderHelper;
@@ -61,6 +65,26 @@ public class VMService {
 			}
 			return resList;
 		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public HashMap<String, String> getVMListByDB(String userId) {
+		try {
+			DBManager db = new DBManager();
+			String sql = "SELECT name, description FROM vm WHERE name LIKE '"+userId+"%'";
+			db.getPreparedStatement(sql);
+			PreparedStatement pstmt = db.getPreparedStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			HashMap<String, String> map = new HashMap<String, String>();
+			while(rs.next()) {
+				map.put(rs.getString("name"), rs.getString("description"));
+			}
+			db.close();
+			return map;
+		} catch(Exception e) {
 			e.printStackTrace();
 			return null;
 		}

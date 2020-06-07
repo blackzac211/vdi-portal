@@ -7,9 +7,9 @@ import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import unist.vdi.account.service.AccountManager;
 import unist.vdi.account.service.LDAPManager;
 import unist.vdi.account.service.UserVO;
 import unist.vdi.common.CommonSecurity;
@@ -19,9 +19,13 @@ import unist.vdi.common.CommonUtil;
 @Controller
 public class AccountController {
 	@RequestMapping("/account/login.do")
-    public String login(Model model, HttpSession session) throws Exception {
-		model.addAttribute("user", (UserVO)session.getAttribute("user"));
-		return "/account/login";
+    public String login(HttpServletResponse response, HttpSession session) throws Exception {
+		if(!AccountManager.isLogin(session)) {
+			return "/account/login";
+		} else {
+			response.sendRedirect("/vcenter/vmlist.do");
+			return null;
+		}
     }
 	
 	@RequestMapping("/account/loginProcess.do")
@@ -53,5 +57,11 @@ public class AccountController {
     	} catch(Exception e) {
     		CommonUtil.writeErrorLogs("login exception: " + e.getMessage());
     	}
+    }
+	
+	@RequestMapping("/account/logout.do")
+    public void logout(HttpServletResponse response, HttpSession session) throws Exception {
+		session.setAttribute("user", null);
+		response.sendRedirect("/");
     }
 }

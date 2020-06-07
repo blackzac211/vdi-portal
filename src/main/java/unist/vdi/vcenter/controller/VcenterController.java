@@ -1,7 +1,5 @@
 package unist.vdi.vcenter.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,14 +15,23 @@ import com.vmware.vim25.VirtualMachineTicket;
 import unist.vdi.account.service.AccountManager;
 import unist.vdi.account.service.UserVO;
 import unist.vdi.common.CommonSecurity;
+import unist.vdi.common.CommonUtil;
 import unist.vdi.vcenter.service.VMService;
 import unist.vdi.vcenter.service.PowerService;
 import unist.vdi.vcenter.service.VDIConnection;
-import unist.vdi.vcenter.service.CustomVM;
 
 
 @Controller
 public class VcenterController {
+	
+	@RequestMapping("/index.do")
+    public void index(HttpServletResponse response, HttpSession session) throws Exception {
+		if(!AccountManager.isLogin(session)) {
+			response.sendRedirect("/account/login.do");
+		} else {
+			response.sendRedirect("/vcenter/vmlist.do");
+		}
+    }
 	
 	@RequestMapping("/vcenter/vmlist.do")
     public String vmlist(HttpSession session) throws Exception {
@@ -37,6 +44,9 @@ public class VcenterController {
 	
 	@RequestMapping("/vcenter/console.do")
     public String console(Model model, String vmId, HttpServletRequest request, HttpSession session) throws Exception {
+		if(!CommonSecurity.checkReferer(request)) {
+			throw new Exception("Exploiting cross-site scripting in Referer header.");
+		}
 		if(!AccountManager.isLogin(session)) {
 			return "/account/redirect_login";
 		} else {
@@ -68,18 +78,19 @@ public class VcenterController {
     			throw new Exception("Exploiting cross-site scripting in Referer header.");
     		}
     		if(!AccountManager.isLogin(session)) {
-    			throw new Exception("isLogin");
+    			return;
     		}
     		UserVO user = (UserVO)session.getAttribute("user");
     		VDIConnection conn = VDIConnection.getInstance();
-    		List<CustomVM> list = new VMService().getVMList(user.getId(), conn);
+    		VMService service = new VMService();
     		
     		JSONObject json = new JSONObject();
-        	json.put("list", list);
+        	json.put("list", service.getVMList(user.getId(), conn));
+        	json.put("map", service.getVMListByDB(user.getId()));
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {
-    		e.printStackTrace();
+    		CommonUtil.writeErrorLogs("selectVMListByUser exception: " + e.getMessage());
     	}
     }
     
@@ -101,7 +112,7 @@ public class VcenterController {
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {
-    		e.printStackTrace();
+    		CommonUtil.writeErrorLogs("powerOn exception: " + e.getMessage());
     	}
     }
     
@@ -122,7 +133,7 @@ public class VcenterController {
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {
-    		e.printStackTrace();
+    		CommonUtil.writeErrorLogs("powerOff exception: " + e.getMessage());
     	}
     }
     
@@ -143,7 +154,7 @@ public class VcenterController {
         	response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {
-    		e.printStackTrace();
+    		CommonUtil.writeErrorLogs("reset exception: " + e.getMessage());
     	}
     }
     
@@ -170,7 +181,7 @@ public class VcenterController {
     		response.setContentType("text/json;charset=utf-8");
         	response.getWriter().print(json.toString());
     	} catch(Exception e) {
-    		e.printStackTrace();
+    		CommonUtil.writeErrorLogs("acquireMksTicket exception: " + e.getMessage());
     	}
     }
 }

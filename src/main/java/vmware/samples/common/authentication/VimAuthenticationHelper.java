@@ -90,7 +90,6 @@ public class VimAuthenticationHelper {
     public void logout() throws Exception {
     	vimPort.logout(serviceContent.getSessionManager());
         serviceContent = null;
-        System.out.println("vim logout");
     }
 
     public VimService getVimService() {

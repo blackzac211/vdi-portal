@@ -17,15 +17,18 @@
 
 <style type="text/css">
 	#topicon { margin-top:50px; text-align:center; }
-	#main { overflow:hidden; width:1100px; margin:0 auto; margin-top:40px; font-size:24px; }
+	#main { overflow:hidden; width:980px; margin:0 auto; margin-top:40px; font-size:24px; }
+	#main #content { text-align:center; }
 	#main div { margin:15px; }
 	#main #contact { margin-top:40px; }
+	#main #download { margin-top:80px; }
+	#main #download span { cursor:pointer; background-color:#43c1c3; padding:10px 15px; color:#fff; border-radius:10px; }
 	.c_b { color:blue; }
 </style>
 <script type="text/javascript">
-	$(function() {
+	function downloadCerts() {
 		location.href = "/files/certs.zip";
-	});
+	}
 </script>
 </head>
 <body>
@@ -35,13 +38,16 @@
 </div>
 
 <div id="main">
-	<div>웹콘솔 기능을 사용하려면 인증서를 설치해야 합니다.<br/>
-		다운로드한 인증서(certs.zip)를 신뢰할 수 있는 루트 인증 기관에 설치하시기 바랍니다.
+	<div id="content">
+		<div>웹콘솔 기능을 사용하려면 인증서를 설치해야 합니다.<br/>
+			인증서(certs.zip)를 신뢰할 수 있는 루트 인증 기관에 설치하시기 바랍니다.
+		</div>
+		<div>Require to install the certificate to use Web Console.<br/>
+			Please add the certificate(certs.zip) to Trusted Root Certification Authorities.
+		</div>
+		<div id="contact">Contact: Information Technology Team, <span class="c_b">security@unist.ac.kr</span></div>
+		<div id="download"><span onclick="downloadCerts()">DOWNLOAD</span></div>
 	</div>
-	<div>Require to install the certificate to use Web Console.<br/>
-		Please add the certificate(certs.zip) to Trusted Root Certification Authorities.
-	</div>
-	<div id="contact">Contact: Information Technology Team, <span class="c_b">security@unist.ac.kr</span></div>
 </div>
 
 </body>

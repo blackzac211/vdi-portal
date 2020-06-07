@@ -2,6 +2,7 @@
 #globalheader nav { overflow:hidden; width:980px; margin:0 auto; }
 #globallogo { float:left; margin-top:20px; }
 #globallogo strong { font-size:40px; color:#001C54; }
+#logout-wrap { float:right; color:#838383; margin:35px 5px 0 0; cursor:pointer; }
 
 /* 
 #globalheader #globalnav { float:right; margin-top:30px; }

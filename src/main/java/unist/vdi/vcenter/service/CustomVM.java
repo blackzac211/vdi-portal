@@ -9,6 +9,7 @@ public class CustomVM {
 	private String memorySize;
 	
 	private String ipAddress;
+	private String description;
 	
 	
 	public String getVm() {
@@ -46,5 +47,11 @@ public class CustomVM {
 	}
 	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
