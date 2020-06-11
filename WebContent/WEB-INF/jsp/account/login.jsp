@@ -44,9 +44,9 @@
 	}
 	
 	@media ( max-width: 480px ) {
-		#content { margin-top:0; }
+		#content { margin-top:0; overflow:hidden; }
 		#left-area header { margin-top:0; }
-		#loginwrap { float:left; }
+		#loginwrap { float:none; overflow:hidden; margin:0 auto; margin-top:40px; width:100%; }
 	}
 </style>
 </head>

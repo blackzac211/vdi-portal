@@ -17,6 +17,7 @@ import unist.vdi.account.service.UserVO;
 import unist.vdi.common.CommonSecurity;
 import unist.vdi.common.CommonUtil;
 import unist.vdi.vcenter.service.VMService;
+import unist.vdi.vcenter.service.CustomVM;
 import unist.vdi.vcenter.service.PowerService;
 import unist.vdi.vcenter.service.VDIConnection;
 
@@ -45,7 +46,8 @@ public class VcenterController {
 	@RequestMapping("/vcenter/console.do")
     public String console(Model model, String vmId, HttpServletRequest request, HttpSession session) throws Exception {
 		if(!CommonSecurity.checkReferer(request)) {
-			throw new Exception("Exploiting cross-site scripting in Referer header.");
+			// throw new Exception("Exploiting cross-site scripting in Referer header.");
+			return "/common/error";
 		}
 		if(!AccountManager.isLogin(session)) {
 			return "/account/redirect_login";
@@ -184,5 +186,36 @@ public class VcenterController {
     		CommonUtil.writeErrorLogs("acquireMksTicket exception: " + e.getMessage());
     	}
     }
+    
+    @RequestMapping("/vcenter/updateDescription.do")
+    public void updateDescription(String name, String description, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    	try {
+    		if(!CommonSecurity.checkReferer(request)) {
+    			throw new Exception("Exploiting cross-site scripting in Referer header.");
+    		}
+    		if(!AccountManager.isLogin(session)) {
+    			throw new Exception();
+    		}
+    		
+    		CustomVM vm = new CustomVM();
+    		vm.setName(name);
+    		vm.setDescription(description);
+    		
+    		UserVO user = (UserVO)session.getAttribute("user");
+    		vm.setReg_id(user.getId());
+    		vm.setUpd_id(user.getId());
+    		
+    		VMService service = new VMService();
+    		service.updateDescription(vm);
+    		
+    		JSONObject json = new JSONObject();
+    		response.setContentType("text/json;charset=utf-8");
+        	response.getWriter().print(json.toString());
+    	} catch(Exception e) {
+    		CommonUtil.writeErrorLogs("acquireMksTicket exception: " + e.getMessage());
+    	}
+    }
+    
+    
 }
 

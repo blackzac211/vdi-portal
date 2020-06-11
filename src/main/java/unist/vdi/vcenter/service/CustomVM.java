@@ -11,6 +11,9 @@ public class CustomVM {
 	private String ipAddress;
 	private String description;
 	
+	private String reg_id;
+	private String upd_id;
+	
 	
 	public String getVm() {
 		return vm;
@@ -53,5 +56,17 @@ public class CustomVM {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getReg_id() {
+		return reg_id;
+	}
+	public void setReg_id(String reg_id) {
+		this.reg_id = reg_id;
+	}
+	public String getUpd_id() {
+		return upd_id;
+	}
+	public void setUpd_id(String upd_id) {
+		this.upd_id = upd_id;
 	}
 }

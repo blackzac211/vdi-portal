@@ -45,7 +45,7 @@ public class PowerShellService {
 		}
 	}
 	
-	
+	/*
 	public HashMap<String, String> acquireMksTicket(String vmId) {
 		HashMap<String, String> map = new HashMap<>();
 		
@@ -66,4 +66,5 @@ public class PowerShellService {
 		}
 		return map;
 	}
+	*/
 }
