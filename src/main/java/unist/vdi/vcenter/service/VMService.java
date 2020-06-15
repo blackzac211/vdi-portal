@@ -83,7 +83,7 @@ public class VMService {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			String sql = "SELECT name, description FROM vm WHERE name LIKE '"+userId+"%'";
+			String sql = "SELECT name, description FROM vm WHERE name LIKE '"+userId+"-%'";
 			db.getPreparedStatement(sql);
 			pstmt = db.getPreparedStatement(sql);
 			rs = pstmt.executeQuery();
