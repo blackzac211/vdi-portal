@@ -1,33 +1,54 @@
 package unist.vdi.account.controller;
 
-import javax.naming.directory.Attributes;
-import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.json.JSONObject;
+import org.opensaml.saml2.core.Attribute;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.saml.SAMLCredential;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import unist.vdi.account.service.AccountManager;
-import unist.vdi.account.service.LDAPManager;
 import unist.vdi.account.service.UserVO;
-import unist.vdi.common.CommonSecurity;
 import unist.vdi.common.CommonUtil;
 
 
 @Controller
 public class AccountController {
 	@RequestMapping("/account/login.do")
-    public String login(HttpServletResponse response, HttpSession session) throws Exception {
-		if(!AccountManager.isLogin(session)) {
-			return "/account/login";
-		} else {
+    public void login(HttpServletResponse response, HttpSession session) throws Exception {
+		try {
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			SAMLCredential credential = (SAMLCredential) authentication.getCredentials();
+			List<Attribute> list = credential.getAttributes();
+			
+			UserVO user = new UserVO();
+			user.setId(authentication.getName());
+			
+			for(int i = 0; i < list.size(); i++) {
+				String attName = list.get(i).getName();
+				String[] arr = credential.getAttributeAsStringArray(attName);
+				
+				
+				if(attName.equals("name")) {
+					user.setName(arr[0]);
+				} else if(attName.equals("erpid")) {
+					user.setErpid(arr[0]);
+				} else if(attName.equals("ip")) {
+					user.setIp(arr[0]);
+				}
+			}
+			session.setAttribute("user", user);
 			response.sendRedirect("/vcenter/vmlist.do");
-			return null;
+		} catch(Exception e) {
+			CommonUtil.writeErrorLogs("login exception: " + e.getMessage());
 		}
     }
 	
+	/*
 	@RequestMapping("/account/loginProcess.do")
     public void processLogin(String username, String password, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
     	try {
@@ -64,4 +85,5 @@ public class AccountController {
 		session.setAttribute("user", null);
 		response.sendRedirect("/");
     }
+	*/
 }
