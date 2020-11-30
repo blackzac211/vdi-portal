@@ -15,7 +15,7 @@ import vmware.samples.common.authentication.VimAuthenticationHelper;
 public class VDIConnection {
 	private final String server = "vdi-vc.unist.ac.kr";
 	private final String username = "administrator@vsphere.local";
-	private final String password = "Un!s7j%vc";
+	private final String password = "Un!s7i!vc";
 	private final boolean skipServerVerification = true;
 	
 	private VapiAuthenticationHelper vapiAuthHelper;
