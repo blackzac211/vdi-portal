@@ -32,7 +32,6 @@ public class AccountController {
 				String attName = list.get(i).getName();
 				String[] arr = credential.getAttributeAsStringArray(attName);
 				
-				
 				if(attName.equals("name")) {
 					user.setName(arr[0]);
 				} else if(attName.equals("erpid")) {

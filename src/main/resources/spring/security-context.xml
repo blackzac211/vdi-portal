@@ -62,8 +62,8 @@
     <!-- Handler deciding where to redirect user after failed login -->
     <bean id="failureRedirectHandler"
           class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
-        <property name="useForward" value="true"/>
-        <property name="defaultFailureUrl" value="/error.jsp"/>
+        <property name="useForward" value="false"/>
+        <!-- <property name="defaultFailureUrl" value="/common/error.jsp"/> -->
     </bean>
 
     <!-- Handler for successful logout -->
@@ -94,11 +94,11 @@
     <!-- <bean id="keyManager" class="org.springframework.security.saml.key.EmptyKeyManager"/> -->
     
     <bean id="keyManager" class="org.springframework.security.saml.key.JKSKeyManager">
-        <constructor-arg value="classpath:security/STAR.unist.ac.kr.jks"/>
-        <constructor-arg type="java.lang.String" value="Un!s7SslpW2"/>
+        <constructor-arg value="classpath:security/Wildcard.unist.ac.kr_tomcat.jks"/>
+        <constructor-arg type="java.lang.String" value="unist123"/> 
         <constructor-arg>
             <map>
-                <entry key="tomcat" value="Un!s7SslpW2"/>
+                <entry key="tomcat" value="unist123"/>
             </map>
         </constructor-arg>
         <constructor-arg type="java.lang.String" value="tomcat"/>

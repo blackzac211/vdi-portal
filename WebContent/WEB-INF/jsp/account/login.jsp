@@ -13,7 +13,7 @@
 <title>VDI Portal</title>
 
 <script type="text/javascript">
-	location.href = "/saml/login?disco=true&idp=http://sts.unist.ac.kr/adfs/services/trust";
+	location.href = "/saml/login?disco=true&idp=http://fs.unist.ac.kr/adfs/services/trust";
 </script>
 
 </head>

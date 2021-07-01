@@ -11,7 +11,7 @@
 		<div id="globallogo">
 			<strong>VDI Portal</strong>
 		</div>
-		<div id="logout-wrap" onclick="logout()">Logout</div>
+		<!-- <div id="logout-wrap" onclick="logout()">Logout</div> -->
 	</nav>
 </div>
 

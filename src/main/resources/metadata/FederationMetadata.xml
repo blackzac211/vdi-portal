@@ -1,6 +1,6 @@
 <EntityDescriptor
-	ID="_3d0a0634-d5e3-4c7d-b674-e1991f9dcaf6"
-	entityID="http://sts.unist.ac.kr/adfs/services/trust"
+	ID="_86483937-a7c6-47a1-9df3-e0c9f736b504"
+	entityID="http://fs.unist.ac.kr/adfs/services/trust"
 	xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
 	
 	<!-- 
@@ -12,7 +12,7 @@
 			<ds:SignatureMethod
 				Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
 			<ds:Reference
-				URI="#_3d0a0634-d5e3-4c7d-b674-e1991f9dcaf6">
+				URI="#_86483937-a7c6-47a1-9df3-e0c9f736b504">
 				<ds:Transforms>
 					<ds:Transform
 						Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
@@ -21,30 +21,30 @@
 				</ds:Transforms>
 				<ds:DigestMethod
 					Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-				<ds:DigestValue>rpIVFJlRjLgwv7y/n+tGN4d7Z+lLHSvWL43UhrrsKCY=
+				<ds:DigestValue>PIQhTND7G7C6Gugnb81O1b1l1fymO9N2lMeShT4m1TM=
 				</ds:DigestValue>
 			</ds:Reference>
 		</ds:SignedInfo>
-		<ds:SignatureValue>Pnz9RtCEbw+0+mhITfyuLmzgaDNN0UF2S4s6f8OkQnWzORUbRV/miQV3MA4IhXD2Ftel+uUhLgslJz1scTE46LZb+gvtAXy3OJ8FR7hG4WwP3I4+Kc8jqFR63v7PxW88XKUIsvtZvbYPmiSsYt2pMsHJUS9oUPxzSw48DzD9uG//6SVRNMPyamFYqcil/4gY2/ChSbQsijErVD7527yfcX6HJ59VEnUi3BoXiZocZ2DClknvTXQ9/oN8/SKXQv3aCecl2Reu6ZbgR23qbEjiNMjobeki0Kup0iXtObrFRUqQnMvvxdLEhwTp8p5zXe2iE3dHtbFJmRwMHjZQaN4Lnw==
+		<ds:SignatureValue>dFkrHg9K2WUdar8XF0OQMewUh+RIDf+hwAxwRq32XJGyRury0mz7OCmtw9CwYjp8Eca/2A0aklhcNssJyBGwQRxCSEhqs2y2U73M5Mg5Qj2r5FGVd0c3bino2VeF9gSNz0YVF2uEofsUGsI/vSDkCdjsu+PT6wsH5EoolUT4twniL6VehAjYzFqEJ/b3+Y/q0Arai99/87mpT+SdMrlhJD3gifBjiHzSOvGh4ZSWrnQjOhwKN0L+kPUFoRBI6oavNEHRqygoqUTYLfwJn1M0NAqIx2Khr/CDzLJScZ+gZzC2WaCnHGOslS25lSAyEvCcRYkZe6eJESLHLU3zrNF8VA==
 		</ds:SignatureValue>
 		<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 			<X509Data>
-				<X509Certificate>MIIC2jCCAcKgAwIBAgIQZhaCtf7hZqxJWZFY1oFl/zANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSBzdHMudW5pc3QuYWMua3IwHhcNMjAwNzA0MDAxNjMyWhcNMjEwNzA0MDAxNjMyWjApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSBzdHMudW5pc3QuYWMua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCkwDGxh1PVtQadFkuHXBqA4X7G/M54uCe8SClTe5EefMaUH61JAPvVFs9feSmWf49+5fuJtWx4xOoyq59r+BuMIsZfAjBwAs+yH3B1cUjnHGR0pkm/yZyhEh1WXBCsLrAJmT3eWXTyPhuSRyto3O8Dn+GvXTHGaDHNoTrzwlQFl4a0LflAVQtUFryAkhboZasDppkZrNxgobSu8SRnFo3n7PMmKqU1DgUOGDnteH6I0D/W1V+/sBjNqR9j53YYh9FqXQkM1QQr98jEsq8htxgr93YKVRaMJSs0SxbaBA9YtXq/N9eZwnXnN8B7D6VI6CAczblyD6us6yEmOy8yKyLNAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAAXBHysb7PI+0OMxefN2WVXkQ5moel/MFcJCYor0tEsg8YlIBZ56T1FlDSq9x13e1lgbr2n5lc9BeGhIIElGNfX/E9QOJZ5wywvO78dY8rQSlk/Isw1nhAEI2mxd1ObwS9PWPVEMt1zN1g9/vNQ+jiB5AonqV8Dfz4oYEHzdE62gtXOTHonmyOxK9naCBxJqJ8tigK4+kf8/6exLsciUbMFBcHPsEon4xtv1lgTV1r1pWl6fYsl9NBFR67us/XwkEv/aprvDv4dsuySLyVX4VEDuPh3Z9fAV2ZuouKHrhlr1ZzV/NKKRxjWn8WQXzs8c7u/8lpejDZdgXnhQ+RWsZEg=
+				<X509Certificate>MIIC2DCCAcCgAwIBAgIQGcKoKZCvQq9AyK6OjjLtDTANBgkqhkiG9w0BAQsFADAoMSYwJAYDVQQDEx1BREZTIFNpZ25pbmcgLSBmcy51bmlzdC5hYy5rcjAeFw0yMTA3MDEwNjI0NDlaFw0yMjA3MDEwNjI0NDlaMCgxJjAkBgNVBAMTHUFERlMgU2lnbmluZyAtIGZzLnVuaXN0LmFjLmtyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvTiiD956RPZ3L3BZrNIPPNAg5/ba8iOgTfLZyIbh53kmgZDNoPJaCQZhcEfr4DwEjYYL9WMcdO/Z6OEt8VmX0wKy4aZzXNBRxWwOmc3xUaWkjoE65YBNB2w6lF3iGa5puaip1PY0mNMjHDR0iJX0spy7qMSoeWgHK61WFW8JoosWA72T7it4M53jRoGgC0crZSNg+1cm/Of+3J16+vcZZNo2vwsXFOwrvHq4HO0CSH4rf1jH06lt1Cvk930xae3WrVuB3fbt2YMn+r1LMMQP19UpQx+vppWqVLYGs9QSPe9W19QYh5gAgv968P4c+Jojk7TSl8SPqKQJvtcmFnJgEQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCFU62rDAr/4ua/cnRXU9Ri8K0NMJYcxSU7fIIaxNn/75KmjoX+3+6idPXrvuM4uavqIZ61ux3b6+8cotiDuGwAx93O4qYRk5dkT4ti0ye/dLM9z1HBarel1FToBPfXYl7M7NGGiO85sthfnmLJiJ/Buwn35R5IUzqbjtFQ8CEO1f+X/RqAlzQVThGOHJkJXnG1bY7F6nEOXqLNYcT59G8SNIw4WRebmUmoXYQp4so9rUJc1AxbnTWBzfGuSpxyl3FW1u0gBs2KiHWGtlyJc/UJ/OkvFl4h4f2ViBjULgzFRvB13jOGTZ+fmqKqU+X6NBeACHj/da5mrQJ5doJ/03w4
 				</X509Certificate>
 			</X509Data>
 		</KeyInfo>
 	</ds:Signature>
 	 -->
-	
+	 
 	<RoleDescriptor xsi:type="fed:ApplicationServiceType"
 		protocolSupportEnumeration="http://docs.oasis-open.org/ws-sx/ws-trust/200512 http://schemas.xmlsoap.org/ws/2005/02/trust http://docs.oasis-open.org/wsfed/federation/200706"
-		ServiceDisplayName="Unist"
+		ServiceDisplayName="UNIST"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706">
 		<KeyDescriptor use="encryption">
 			<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 				<X509Data>
-					<X509Certificate>MIIC4DCCAcigAwIBAgIQRFRdQABaOalOMz8t5lYosDANBgkqhkiG9w0BAQsFADAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSBzdHMudW5pc3QuYWMua3IwHhcNMjAwNzA0MDAxNjMxWhcNMjEwNzA0MDAxNjMxWjAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSBzdHMudW5pc3QuYWMua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0E+sp4dx5jes6BcdLHcYKBrhEb3zEQWiXICDC4shs5knMUwOMk2qwna/Q3vWOsATXlmFXcF54Et7CiaJkXk6mJYkmEC+Fo3kyq6uf93I7Aq8SlcV5AHN3MxwAmdsHDjjy6vQJxq0zmNsXA6WRwh8UC2nCimYXTRj6l0zwYg3XRRBvx0xDVRnDmmWRmMJBo7vEkQdSLFM3oBbEJGXwcYqwMHVj2YjX0DjKigYp3+7DXo3COxfLM6WzY/L+vyCTcrjilRqaw7p0JDTkaGtZIWE4He+mJvLCw/2/rEesr/7XfaNG2+5Sgs+49n9VnabbCmf4zwWXfIXZkTerZidJBcFzAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAKahO+WZ6Zt3cAmbrbaGokl/P5PtFYLbKwel7/gn/YnyftRCKSJ5T2JOU+ywdv66Y3jX4RSVtjnX+JNRDUF0YZf4Ge6quAXLLf7QFZx3gGAiXGSwpGlW4AC5nw0b5oX2OFhs5aXxLO+Y33IkYzdWZlthagJRjHP0VeiG6ebdG3ujxgM93fuorzfWdcgp9/Wx3q2Ab3B+H5hmtV0wcPvDGtisfBpz8I1mDtq+XNUfCgsrKdBioim2h8jACQAWur6yoD02QcOmCczMA6uC8HkseyLejRnykH+VVG0GckBnKyNRNAZzzW0qBxCZ/nkTlwDQkIsSccXXBZyrq2faiDDVMGk=
+					<X509Certificate>MIIC3jCCAcagAwIBAgIQYOLNH/Wz0ZZIEc4GpuiapDANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDEyBBREZTIEVuY3J5cHRpb24gLSBmcy51bmlzdC5hYy5rcjAeFw0yMTA3MDEwNjI0NDlaFw0yMjA3MDEwNjI0NDlaMCsxKTAnBgNVBAMTIEFERlMgRW5jcnlwdGlvbiAtIGZzLnVuaXN0LmFjLmtyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6iy51kRgFuBecs0G1aA0NJEomD/e8sckJw9EdoXE3mOe22Xm1tpd6VV/3dpz0vdCOGL26ZJrYxuWAaQOSVC3RwBjU16xxoAv26URlxaAW3DwCX1ccKuL+ybUoSQ0HM/S0oOcL6+LsRXhzNlxd8EMVBn83ItBERqg0FHBHq2eSaMZFLC9M8kwh64XXmTZdq75tAgfmXjo3ATk4gISzEGUCzv22zWh9QEjIcPYOxTBLQGmrdI1DfB5UBd0N02PS2bqxKMGtU1lclAkNyAnAg6+vgZF31Z5gJudXvPy72XZPK392Q+XvRTeNRbuUPH6KGAeVavVPZbPcPeu2JBjUK5NSQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQDpBMux3MVQ7aXIp0mqn9M8eprc0RQWeKYAir5IhoVgQ5EK66ZooKwNW8Mm7RJmKeeYmZ27VdVT0JWTdxXrrXy7/SyPJ7x9xHWG3xX/SAxdpIIhDi63Fytvx0eiPQX1MeMDuc6RKBLpeJ4FeMf8z+fHPYBGFWEE44zRwjrqJA5tLm1SnVWNiTdoj2gkEMhWLeKjizZdYIjY+5AywIg/mtHapUMnCpMxzaa/WjL01ysQDUkDmgRvbabitVKtTLsRbOQGpOM+w2vlhAnmtdylBBOjI6GK/dZLTHqXpu1OW9NkpeKoij1uNbezeiGbk39kim1qXscMO2yFbmWHpdInDS7V
 					</X509Certificate>
 				</X509Data>
 			</KeyInfo>
@@ -54,497 +54,541 @@
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>전자 메일 주소</auth:DisplayName>
-				<auth:Description>사용자의 전자 메일 주소</auth:Description>
+				<auth:DisplayName>E-Mail Address</auth:DisplayName>
+				<auth:Description>The e-mail address of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이름</auth:DisplayName>
-				<auth:Description>사용자의 이름</auth:Description>
+				<auth:DisplayName>Given Name</auth:DisplayName>
+				<auth:Description>The given name of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이름</auth:DisplayName>
-				<auth:Description>사용자의 고유 이름</auth:Description>
+				<auth:DisplayName>Name</auth:DisplayName>
+				<auth:Description>The unique name of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
 				<auth:DisplayName>UPN</auth:DisplayName>
-				<auth:Description>사용자의 UPN(사용자 이름)</auth:Description>
+				<auth:Description>The user principal name (UPN) of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/claims/CommonName" Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>일반 이름</auth:DisplayName>
-				<auth:Description>사용자의 일반 이름</auth:Description>
+				<auth:DisplayName>Common Name</auth:DisplayName>
+				<auth:Description>The common name of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/claims/EmailAddress" Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>AD FS 1.x 전자 메일 주소</auth:DisplayName>
-				<auth:Description>AD FS 1.1 또는 AD FS 1.0과 상호 작용할 경우 사용자의 전자 메일 주소</auth:Description>
+				<auth:DisplayName>AD FS 1.x E-Mail Address</auth:DisplayName>
+				<auth:Description>The e-mail address of the user when interoperating
+					with AD FS 1.1 or AD FS 1.0</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/claims/Group" Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>그룹</auth:DisplayName>
-				<auth:Description>사용자가 구성원으로 속해 있는 그룹</auth:Description>
+				<auth:DisplayName>Group</auth:DisplayName>
+				<auth:Description>A group that the user is a member of
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/claims/UPN" Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
 				<auth:DisplayName>AD FS 1.x UPN</auth:DisplayName>
-				<auth:Description>AD FS 1.1 또는 AD FS 1.0과 상호 작용할 경우 사용자의 UPN</auth:Description>
+				<auth:Description>The UPN of the user when interoperating with AD FS
+					1.1 or AD FS 1.0</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>역할</auth:DisplayName>
-				<auth:Description>사용자 역할</auth:Description>
+				<auth:DisplayName>Role</auth:DisplayName>
+				<auth:Description>A role that the user has</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
 				<auth:DisplayName>Surname</auth:DisplayName>
-				<auth:Description>사용자의 성</auth:Description>
+				<auth:Description>The surname of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
 				<auth:DisplayName>PPID</auth:DisplayName>
-				<auth:Description>사용자의 개인 식별자</auth:Description>
+				<auth:Description>The private identifier of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이름 ID</auth:DisplayName>
-				<auth:Description>사용자의 SAML 이름 식별자</auth:Description>
+				<auth:DisplayName>Name ID</auth:DisplayName>
+				<auth:Description>The SAML name identifier of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증 타임 스탬프</auth:DisplayName>
-				<auth:Description>사용자가 인증된 날짜 및 시간 표시에 사용됨</auth:Description>
+				<auth:DisplayName>Authentication time stamp</auth:DisplayName>
+				<auth:Description>Used to display the time and date that the user
+					was authenticated</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증 방법</auth:DisplayName>
-				<auth:Description>사용자를 인증하는 데 사용되는 방법</auth:Description>
+				<auth:DisplayName>Authentication method</auth:DisplayName>
+				<auth:Description>The method used to authenticate the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>거부 전용 그룹 SID</auth:DisplayName>
-				<auth:Description>사용자의 거부 전용 그룹 SID</auth:Description>
+				<auth:DisplayName>Deny only group SID</auth:DisplayName>
+				<auth:Description>The deny-only group SID of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarysid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>거부 전용 기본 SID</auth:DisplayName>
-				<auth:Description>사용자의 거부 전용 기본 SID</auth:Description>
+				<auth:DisplayName>Deny only primary SID</auth:DisplayName>
+				<auth:Description>The deny-only primary SID of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarygroupsid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>거부 전용 기본 그룹 SID</auth:DisplayName>
-				<auth:Description>사용자의 거부 전용 기본 그룹 SID</auth:Description>
+				<auth:DisplayName>Deny only primary group SID</auth:DisplayName>
+				<auth:Description>The deny-only primary group SID of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>그룹 SID</auth:DisplayName>
-				<auth:Description>사용자의 그룹 SID</auth:Description>
+				<auth:DisplayName>Group SID</auth:DisplayName>
+				<auth:Description>The group SID of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>기본 그룹 SID</auth:DisplayName>
-				<auth:Description>사용자의 기본 그룹 SID</auth:Description>
+				<auth:DisplayName>Primary group SID</auth:DisplayName>
+				<auth:Description>The primary group SID of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>기본 SID</auth:DisplayName>
-				<auth:Description>사용자의 기본 SID</auth:Description>
+				<auth:DisplayName>Primary SID</auth:DisplayName>
+				<auth:Description>The primary SID of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>Windows 계정 이름</auth:DisplayName>
-				<auth:Description>'도메인\사용자' 형식의 사용자 도메인 계정 이름</auth:Description>
+				<auth:DisplayName>Windows account name</auth:DisplayName>
+				<auth:Description>The domain account name of the user in the form of
+					domain\user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>등록된 사용자임</auth:DisplayName>
-				<auth:Description>사용자가 이 장치를 사용하도록 등록되었음</auth:Description>
+				<auth:DisplayName>Is Registered User</auth:DisplayName>
+				<auth:Description>User is registered to use this device
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>장치 식별자</auth:DisplayName>
-				<auth:Description>장치의 식별자</auth:Description>
+				<auth:DisplayName>Device Identifier</auth:DisplayName>
+				<auth:Description>Identifier of the device</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>Device Registration 식별자</auth:DisplayName>
-				<auth:Description>Device Registration용 식별자</auth:Description>
+				<auth:DisplayName>Device Registration Identifier</auth:DisplayName>
+				<auth:Description>Identifier for Device Registration
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>Device Registration 표시 이름</auth:DisplayName>
-				<auth:Description>Device Registration의 표시 이름</auth:Description>
+				<auth:DisplayName>Device Registration DisplayName</auth:DisplayName>
+				<auth:Description>Display name of Device Registration
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/ostype"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>장치 OS 유형</auth:DisplayName>
-				<auth:Description>장치의 OS 유형</auth:Description>
+				<auth:DisplayName>Device OS type</auth:DisplayName>
+				<auth:Description>OS type of the device</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/osversion"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>장치 OS 버전</auth:DisplayName>
-				<auth:Description>장치의 OS 버전</auth:Description>
+				<auth:DisplayName>Device OS Version</auth:DisplayName>
+				<auth:Description>OS version of the device</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/ismanaged"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>관리 장치임</auth:DisplayName>
-				<auth:Description>장치는 관리 서비스로 관리됨</auth:Description>
+				<auth:DisplayName>Is Managed Device</auth:DisplayName>
+				<auth:Description>Device is managed by a management service
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>전달된 클라이언트 IP</auth:DisplayName>
-				<auth:Description>사용자의 IP 주소</auth:Description>
+				<auth:DisplayName>Forwarded Client IP</auth:DisplayName>
+				<auth:Description>IP address of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>클라이언트 응용 프로그램</auth:DisplayName>
-				<auth:Description>클라이언트 응용 프로그램의 유형</auth:Description>
+				<auth:DisplayName>Client Application</auth:DisplayName>
+				<auth:Description>Type of the Client Application</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>클라이언트 사용자 에이전트</auth:DisplayName>
-				<auth:Description>클라이언트에서 응용 프로그램에 액세스하는 데 사용하는 장치 유형</auth:Description>
+				<auth:DisplayName>Client User Agent</auth:DisplayName>
+				<auth:Description>Device type the client is using to access the
+					application</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-ip"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>클라이언트 IP</auth:DisplayName>
-				<auth:Description>클라이언트의 IP 주소</auth:Description>
+				<auth:DisplayName>Client IP</auth:DisplayName>
+				<auth:Description>IP address of the client</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>끝점 경로</auth:DisplayName>
-				<auth:Description>활성 또는 수동 클라이언트인지 확인하는 데 사용할 수 있는 절대 끝점 경로</auth:Description>
+				<auth:DisplayName>Endpoint Path</auth:DisplayName>
+				<auth:Description>Absolute Endpoint path which can be used to
+					determine active versus passive clients</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>프록시</auth:DisplayName>
-				<auth:Description>요청을 전달한 페더레이션 서버 프록시의 DNS 이름</auth:Description>
+				<auth:DisplayName>Proxy</auth:DisplayName>
+				<auth:Description>DNS name of the federation server proxy that
+					passed the request</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/relyingpartytrustid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>응용 프로그램 식별자</auth:DisplayName>
-				<auth:Description>신뢰 당사자의 식별자</auth:Description>
+				<auth:DisplayName>Application Identifier</auth:DisplayName>
+				<auth:Description>Identifier for the Relying Party
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/applicationpolicy"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>응용 프로그램 정책</auth:DisplayName>
-				<auth:Description>인증서의 응용 프로그램 정책</auth:Description>
+				<auth:DisplayName>Application policies</auth:DisplayName>
+				<auth:Description>Application policies of the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>권한 키 식별자</auth:DisplayName>
-				<auth:Description>발급된 인증서에 서명한 인증서의 권한 키 식별자 확장</auth:Description>
+				<auth:DisplayName>Authority Key Identifier</auth:DisplayName>
+				<auth:Description>The Authority Key Identifier extension of the
+					certificate that signed an issued certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/basicconstraints"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>기본 제약 조건</auth:DisplayName>
-				<auth:Description>인증서의 기본 제약 조건 중 하나</auth:Description>
+				<auth:DisplayName>Basic Constraint</auth:DisplayName>
+				<auth:Description>One of the basic constraints of the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/eku"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>확장된 키 사용</auth:DisplayName>
-				<auth:Description>인증서의 확장된 키 사용 중 하나를 설명함</auth:Description>
+				<auth:DisplayName>Enhanced Key Usage</auth:DisplayName>
+				<auth:Description>Describes one of the enhanced key usages of the
+					certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuer"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>발급자</auth:DisplayName>
-				<auth:Description>X.509 인증서를 발급한 인증 기관의 이름</auth:Description>
+				<auth:DisplayName>Issuer</auth:DisplayName>
+				<auth:Description>The name of the certificate authority that issued
+					the X.509 certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuername"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>발급자 이름</auth:DisplayName>
-				<auth:Description>인증서 발급자의 고유 이름</auth:Description>
+				<auth:DisplayName>Issuer Name</auth:DisplayName>
+				<auth:Description>The distinguished name of the certificate issuer
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>키 사용</auth:DisplayName>
-				<auth:Description>인증서의 키 사용 중 하나</auth:Description>
+				<auth:DisplayName>Key Usage</auth:DisplayName>
+				<auth:Description>One of the key usages of the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/notafter"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이전</auth:DisplayName>
-				<auth:Description>인증서가 더 이상 유효해지지 않는 로컬 시간의 날짜</auth:Description>
+				<auth:DisplayName>Not After</auth:DisplayName>
+				<auth:Description>Date in local time after which a certificate is no
+					longer valid</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/notbefore"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이후</auth:DisplayName>
-				<auth:Description>인증서가 유효해지는 로컬 시간의 날짜</auth:Description>
+				<auth:DisplayName>Not Before</auth:DisplayName>
+				<auth:Description>The date in local time on which a certificate
+					becomes valid</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatepolicy"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증서 정책</auth:DisplayName>
-				<auth:Description>인증서가 발급될 때 사용된 정책</auth:Description>
+				<auth:DisplayName>Certificate Policies</auth:DisplayName>
+				<auth:Description>The policies under which the certificate has been
+					issued</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>공개 키</auth:DisplayName>
-				<auth:Description>인증서의 공개 키</auth:Description>
+				<auth:DisplayName>Public Key</auth:DisplayName>
+				<auth:Description>Public Key of the certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증서 원시 데이터</auth:DisplayName>
-				<auth:Description>인증서의 원시 데이터</auth:Description>
+				<auth:DisplayName>Certificate Raw Data</auth:DisplayName>
+				<auth:Description>The raw data of the certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/san"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>주체 대체 이름</auth:DisplayName>
-				<auth:Description>인증서의 대체 이름 중 하나</auth:Description>
+				<auth:DisplayName>Subject Alternative Name</auth:DisplayName>
+				<auth:Description>One of the alternative names of the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>일련 번호</auth:DisplayName>
-				<auth:Description>인증서의 일련 번호</auth:Description>
+				<auth:DisplayName>Serial Number</auth:DisplayName>
+				<auth:Description>The serial number of a certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/signaturealgorithm"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>서명 알고리즘</auth:DisplayName>
-				<auth:Description>인증서의 서명을 만드는 데 사용되는 알고리즘</auth:Description>
+				<auth:DisplayName>Signature Algorithm</auth:DisplayName>
+				<auth:Description>The algorithm used to create the signature of a
+					certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/subject"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>주체</auth:DisplayName>
-				<auth:Description>인증서의 주체</auth:Description>
+				<auth:DisplayName>Subject</auth:DisplayName>
+				<auth:Description>The subject from the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>주체 키 식별자</auth:DisplayName>
-				<auth:Description>인증서의 주체 키 식별자를 설명함</auth:Description>
+				<auth:DisplayName>Subject Key Identifier</auth:DisplayName>
+				<auth:Description>Describes the subject key identifier of the
+					certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>주체 이름</auth:DisplayName>
-				<auth:Description>인증서의 주체 고유 이름</auth:Description>
+				<auth:DisplayName>Subject Name</auth:DisplayName>
+				<auth:Description>The subject distinguished name from a certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplateinformation"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>V2 템플릿 이름</auth:DisplayName>
-				<auth:Description>인증서를 발급하거나 갱신할 때 사용되는 버전 2 인증서 템플릿의 이름입니다. 확장은
-					Microsoft 고유의 확장입니다.</auth:Description>
+				<auth:DisplayName>V2 Template Name</auth:DisplayName>
+				<auth:Description>The name of the version 2 certificate template
+					used when issuing or renewing a certificate. The extension is
+					Microsoft specific.</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>V1 템플릿 이름</auth:DisplayName>
-				<auth:Description>인증서를 발급하거나 갱신할 때 사용되는 버전 1 인증서 템플릿의 이름입니다. 확장은
-					Microsoft 고유의 확장입니다.</auth:Description>
+				<auth:DisplayName>V1 Template Name</auth:DisplayName>
+				<auth:Description>The name of the version 1 certificate template
+					used when issuing or renewing a certificate. The extension is
+					Microsoft specific.</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/thumbprint"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>지문</auth:DisplayName>
-				<auth:Description>인증서의 지문</auth:Description>
+				<auth:DisplayName>Thumbprint</auth:DisplayName>
+				<auth:Description>Thumbprint of the certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/x509version"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>X.509 버전</auth:DisplayName>
-				<auth:Description>인증서의 X.509 형식 버전</auth:Description>
+				<auth:DisplayName>X.509 Version</auth:DisplayName>
+				<auth:Description>The X.509 format version of a certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>회사 네트워크 내부</auth:DisplayName>
-				<auth:Description>회사 네트워크에서 요청이 발생했는지 여부를 나타내는 데 사용됨</auth:Description>
+				<auth:DisplayName>Inside Corporate Network</auth:DisplayName>
+				<auth:Description>Used to indicate if a request originated inside
+					corporate network</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>암호 만료 시간</auth:DisplayName>
-				<auth:Description>암호가 만료되는 시간을 표시하는 데 사용됨</auth:Description>
+				<auth:DisplayName>Password Expiration Time</auth:DisplayName>
+				<auth:Description>Used to display the time when the password expires
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>암호 만료 기간(일)</auth:DisplayName>
-				<auth:Description>암호 만료까지 남은 기간(일)을 표시하는 데 사용됨</auth:Description>
+				<auth:DisplayName>Password Expiration Days</auth:DisplayName>
+				<auth:Description>Used to display the number of days to password
+					expiry</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2012/01/passwordchangeurl"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>업데이트 암호 URL</auth:DisplayName>
-				<auth:Description>업데이트 암호 서비스의 웹 주소를 표시하는 데 사용됨</auth:Description>
+				<auth:DisplayName>Update Password URL</auth:DisplayName>
+				<auth:Description>Used to display the web address of update password
+					service</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/claims/authnmethodsreferences"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증 방법 참조</auth:DisplayName>
-				<auth:Description>사용자를 인증하는 데 사용된 모든 인증 방법을 나타내는 데 사용됨</auth:Description>
+				<auth:DisplayName>Authentication Methods References
+				</auth:DisplayName>
+				<auth:Description>Used to indicate all authentication methods used
+					to authenticate the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/client-request-id"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>클라이언트 요청 ID</auth:DisplayName>
-				<auth:Description>사용자 세션의 식별자</auth:Description>
-			</auth:ClaimType>
-			<auth:ClaimType
-				Uri="http://schemas.microsoft.com/ws/2013/11/alternateloginid"
-				Optional="true"
-				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>대체 로그인 ID</auth:DisplayName>
-				<auth:Description>사용자의 대체 로그인 ID</auth:Description>
+				<auth:DisplayName>Client Request ID</auth:DisplayName>
+				<auth:Description>Identifier for a user session</auth:Description>
 			</auth:ClaimType>
 		</fed:ClaimTypesRequested>
 		<fed:TargetScopes>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/services/trust/2005/issuedtokenmixedasymmetricbasic256</Address>
+				<Address>https://fs.unist.ac.kr/adfs/services/trust/2005/issuedtokenmixedasymmetricbasic256
+				</Address>
 			</EndpointReference>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/services/trust/2005/issuedtokenmixedsymmetricbasic256</Address>
+				<Address>https://fs.unist.ac.kr/adfs/services/trust/2005/issuedtokenmixedsymmetricbasic256
+				</Address>
 			</EndpointReference>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/services/trust/13/issuedtokenmixedasymmetricbasic256</Address>
+				<Address>https://fs.unist.ac.kr/adfs/services/trust/13/issuedtokenmixedasymmetricbasic256
+				</Address>
 			</EndpointReference>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/services/trust/13/issuedtokenmixedsymmetricbasic256</Address>
+				<Address>https://fs.unist.ac.kr/adfs/services/trust/13/issuedtokenmixedsymmetricbasic256
+				</Address>
 			</EndpointReference>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/ls/</Address>
+				<Address>https://fs.unist.ac.kr/adfs/ls/</Address>
 			</EndpointReference>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>http://sts.unist.ac.kr/adfs/services/trust</Address>
+				<Address>http://fs.unist.ac.kr/adfs/services/trust</Address>
 			</EndpointReference>
 		</fed:TargetScopes>
 		<fed:ApplicationServiceEndpoint>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/services/trust/2005/issuedtokenmixedasymmetricbasic256</Address>
+				<Address>https://fs.unist.ac.kr/adfs/services/trust/2005/issuedtokenmixedasymmetricbasic256
+				</Address>
 			</EndpointReference>
 		</fed:ApplicationServiceEndpoint>
 		<fed:PassiveRequestorEndpoint>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/ls/</Address>
+				<Address>https://fs.unist.ac.kr/adfs/ls/</Address>
 			</EndpointReference>
 		</fed:PassiveRequestorEndpoint>
 	</RoleDescriptor>
 	<RoleDescriptor xsi:type="fed:SecurityTokenServiceType"
 		protocolSupportEnumeration="http://docs.oasis-open.org/ws-sx/ws-trust/200512 http://schemas.xmlsoap.org/ws/2005/02/trust http://docs.oasis-open.org/wsfed/federation/200706"
-		ServiceDisplayName="Unist"
+		ServiceDisplayName="UNIST"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706">
 		<KeyDescriptor use="signing">
 			<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 				<X509Data>
-					<X509Certificate>MIIC2jCCAcKgAwIBAgIQZhaCtf7hZqxJWZFY1oFl/zANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSBzdHMudW5pc3QuYWMua3IwHhcNMjAwNzA0MDAxNjMyWhcNMjEwNzA0MDAxNjMyWjApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSBzdHMudW5pc3QuYWMua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCkwDGxh1PVtQadFkuHXBqA4X7G/M54uCe8SClTe5EefMaUH61JAPvVFs9feSmWf49+5fuJtWx4xOoyq59r+BuMIsZfAjBwAs+yH3B1cUjnHGR0pkm/yZyhEh1WXBCsLrAJmT3eWXTyPhuSRyto3O8Dn+GvXTHGaDHNoTrzwlQFl4a0LflAVQtUFryAkhboZasDppkZrNxgobSu8SRnFo3n7PMmKqU1DgUOGDnteH6I0D/W1V+/sBjNqR9j53YYh9FqXQkM1QQr98jEsq8htxgr93YKVRaMJSs0SxbaBA9YtXq/N9eZwnXnN8B7D6VI6CAczblyD6us6yEmOy8yKyLNAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAAXBHysb7PI+0OMxefN2WVXkQ5moel/MFcJCYor0tEsg8YlIBZ56T1FlDSq9x13e1lgbr2n5lc9BeGhIIElGNfX/E9QOJZ5wywvO78dY8rQSlk/Isw1nhAEI2mxd1ObwS9PWPVEMt1zN1g9/vNQ+jiB5AonqV8Dfz4oYEHzdE62gtXOTHonmyOxK9naCBxJqJ8tigK4+kf8/6exLsciUbMFBcHPsEon4xtv1lgTV1r1pWl6fYsl9NBFR67us/XwkEv/aprvDv4dsuySLyVX4VEDuPh3Z9fAV2ZuouKHrhlr1ZzV/NKKRxjWn8WQXzs8c7u/8lpejDZdgXnhQ+RWsZEg=
+					<X509Certificate>MIIC2DCCAcCgAwIBAgIQGcKoKZCvQq9AyK6OjjLtDTANBgkqhkiG9w0BAQsFADAoMSYwJAYDVQQDEx1BREZTIFNpZ25pbmcgLSBmcy51bmlzdC5hYy5rcjAeFw0yMTA3MDEwNjI0NDlaFw0yMjA3MDEwNjI0NDlaMCgxJjAkBgNVBAMTHUFERlMgU2lnbmluZyAtIGZzLnVuaXN0LmFjLmtyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvTiiD956RPZ3L3BZrNIPPNAg5/ba8iOgTfLZyIbh53kmgZDNoPJaCQZhcEfr4DwEjYYL9WMcdO/Z6OEt8VmX0wKy4aZzXNBRxWwOmc3xUaWkjoE65YBNB2w6lF3iGa5puaip1PY0mNMjHDR0iJX0spy7qMSoeWgHK61WFW8JoosWA72T7it4M53jRoGgC0crZSNg+1cm/Of+3J16+vcZZNo2vwsXFOwrvHq4HO0CSH4rf1jH06lt1Cvk930xae3WrVuB3fbt2YMn+r1LMMQP19UpQx+vppWqVLYGs9QSPe9W19QYh5gAgv968P4c+Jojk7TSl8SPqKQJvtcmFnJgEQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCFU62rDAr/4ua/cnRXU9Ri8K0NMJYcxSU7fIIaxNn/75KmjoX+3+6idPXrvuM4uavqIZ61ux3b6+8cotiDuGwAx93O4qYRk5dkT4ti0ye/dLM9z1HBarel1FToBPfXYl7M7NGGiO85sthfnmLJiJ/Buwn35R5IUzqbjtFQ8CEO1f+X/RqAlzQVThGOHJkJXnG1bY7F6nEOXqLNYcT59G8SNIw4WRebmUmoXYQp4so9rUJc1AxbnTWBzfGuSpxyl3FW1u0gBs2KiHWGtlyJc/UJ/OkvFl4h4f2ViBjULgzFRvB13jOGTZ+fmqKqU+X6NBeACHj/da5mrQJ5doJ/03w4
 					</X509Certificate>
 				</X509Data>
 			</KeyInfo>
@@ -560,453 +604,493 @@
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>전자 메일 주소</auth:DisplayName>
-				<auth:Description>사용자의 전자 메일 주소</auth:Description>
+				<auth:DisplayName>E-Mail Address</auth:DisplayName>
+				<auth:Description>The e-mail address of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이름</auth:DisplayName>
-				<auth:Description>사용자의 이름</auth:Description>
+				<auth:DisplayName>Given Name</auth:DisplayName>
+				<auth:Description>The given name of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이름</auth:DisplayName>
-				<auth:Description>사용자의 고유 이름</auth:Description>
+				<auth:DisplayName>Name</auth:DisplayName>
+				<auth:Description>The unique name of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
 				<auth:DisplayName>UPN</auth:DisplayName>
-				<auth:Description>사용자의 UPN(사용자 이름)</auth:Description>
+				<auth:Description>The user principal name (UPN) of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/claims/CommonName" Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>일반 이름</auth:DisplayName>
-				<auth:Description>사용자의 일반 이름</auth:Description>
+				<auth:DisplayName>Common Name</auth:DisplayName>
+				<auth:Description>The common name of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/claims/EmailAddress" Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>AD FS 1.x 전자 메일 주소</auth:DisplayName>
-				<auth:Description>AD FS 1.1 또는 AD FS 1.0과 상호 작용할 경우 사용자의 전자 메일 주소</auth:Description>
+				<auth:DisplayName>AD FS 1.x E-Mail Address</auth:DisplayName>
+				<auth:Description>The e-mail address of the user when interoperating
+					with AD FS 1.1 or AD FS 1.0</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/claims/Group" Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>그룹</auth:DisplayName>
-				<auth:Description>사용자가 구성원으로 속해 있는 그룹</auth:Description>
+				<auth:DisplayName>Group</auth:DisplayName>
+				<auth:Description>A group that the user is a member of
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/claims/UPN" Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
 				<auth:DisplayName>AD FS 1.x UPN</auth:DisplayName>
-				<auth:Description>AD FS 1.1 또는 AD FS 1.0과 상호 작용할 경우 사용자의 UPN</auth:Description>
+				<auth:Description>The UPN of the user when interoperating with AD FS
+					1.1 or AD FS 1.0</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>역할</auth:DisplayName>
-				<auth:Description>사용자 역할</auth:Description>
+				<auth:DisplayName>Role</auth:DisplayName>
+				<auth:Description>A role that the user has</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
 				<auth:DisplayName>Surname</auth:DisplayName>
-				<auth:Description>사용자의 성</auth:Description>
+				<auth:Description>The surname of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
 				<auth:DisplayName>PPID</auth:DisplayName>
-				<auth:Description>사용자의 개인 식별자</auth:Description>
+				<auth:Description>The private identifier of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이름 ID</auth:DisplayName>
-				<auth:Description>사용자의 SAML 이름 식별자</auth:Description>
+				<auth:DisplayName>Name ID</auth:DisplayName>
+				<auth:Description>The SAML name identifier of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증 타임 스탬프</auth:DisplayName>
-				<auth:Description>사용자가 인증된 날짜 및 시간 표시에 사용됨</auth:Description>
+				<auth:DisplayName>Authentication time stamp</auth:DisplayName>
+				<auth:Description>Used to display the time and date that the user
+					was authenticated</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증 방법</auth:DisplayName>
-				<auth:Description>사용자를 인증하는 데 사용되는 방법</auth:Description>
+				<auth:DisplayName>Authentication method</auth:DisplayName>
+				<auth:Description>The method used to authenticate the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>거부 전용 그룹 SID</auth:DisplayName>
-				<auth:Description>사용자의 거부 전용 그룹 SID</auth:Description>
+				<auth:DisplayName>Deny only group SID</auth:DisplayName>
+				<auth:Description>The deny-only group SID of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarysid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>거부 전용 기본 SID</auth:DisplayName>
-				<auth:Description>사용자의 거부 전용 기본 SID</auth:Description>
+				<auth:DisplayName>Deny only primary SID</auth:DisplayName>
+				<auth:Description>The deny-only primary SID of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarygroupsid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>거부 전용 기본 그룹 SID</auth:DisplayName>
-				<auth:Description>사용자의 거부 전용 기본 그룹 SID</auth:Description>
+				<auth:DisplayName>Deny only primary group SID</auth:DisplayName>
+				<auth:Description>The deny-only primary group SID of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>그룹 SID</auth:DisplayName>
-				<auth:Description>사용자의 그룹 SID</auth:Description>
+				<auth:DisplayName>Group SID</auth:DisplayName>
+				<auth:Description>The group SID of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>기본 그룹 SID</auth:DisplayName>
-				<auth:Description>사용자의 기본 그룹 SID</auth:Description>
+				<auth:DisplayName>Primary group SID</auth:DisplayName>
+				<auth:Description>The primary group SID of the user
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>기본 SID</auth:DisplayName>
-				<auth:Description>사용자의 기본 SID</auth:Description>
+				<auth:DisplayName>Primary SID</auth:DisplayName>
+				<auth:Description>The primary SID of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>Windows 계정 이름</auth:DisplayName>
-				<auth:Description>'도메인\사용자' 형식의 사용자 도메인 계정 이름</auth:Description>
+				<auth:DisplayName>Windows account name</auth:DisplayName>
+				<auth:Description>The domain account name of the user in the form of
+					domain\user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>등록된 사용자임</auth:DisplayName>
-				<auth:Description>사용자가 이 장치를 사용하도록 등록되었음</auth:Description>
+				<auth:DisplayName>Is Registered User</auth:DisplayName>
+				<auth:Description>User is registered to use this device
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>장치 식별자</auth:DisplayName>
-				<auth:Description>장치의 식별자</auth:Description>
+				<auth:DisplayName>Device Identifier</auth:DisplayName>
+				<auth:Description>Identifier of the device</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>Device Registration 식별자</auth:DisplayName>
-				<auth:Description>Device Registration용 식별자</auth:Description>
+				<auth:DisplayName>Device Registration Identifier</auth:DisplayName>
+				<auth:Description>Identifier for Device Registration
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>Device Registration 표시 이름</auth:DisplayName>
-				<auth:Description>Device Registration의 표시 이름</auth:Description>
+				<auth:DisplayName>Device Registration DisplayName</auth:DisplayName>
+				<auth:Description>Display name of Device Registration
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/ostype"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>장치 OS 유형</auth:DisplayName>
-				<auth:Description>장치의 OS 유형</auth:Description>
+				<auth:DisplayName>Device OS type</auth:DisplayName>
+				<auth:Description>OS type of the device</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/osversion"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>장치 OS 버전</auth:DisplayName>
-				<auth:Description>장치의 OS 버전</auth:Description>
+				<auth:DisplayName>Device OS Version</auth:DisplayName>
+				<auth:Description>OS version of the device</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/ismanaged"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>관리 장치임</auth:DisplayName>
-				<auth:Description>장치는 관리 서비스로 관리됨</auth:Description>
+				<auth:DisplayName>Is Managed Device</auth:DisplayName>
+				<auth:Description>Device is managed by a management service
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>전달된 클라이언트 IP</auth:DisplayName>
-				<auth:Description>사용자의 IP 주소</auth:Description>
+				<auth:DisplayName>Forwarded Client IP</auth:DisplayName>
+				<auth:Description>IP address of the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>클라이언트 응용 프로그램</auth:DisplayName>
-				<auth:Description>클라이언트 응용 프로그램의 유형</auth:Description>
+				<auth:DisplayName>Client Application</auth:DisplayName>
+				<auth:Description>Type of the Client Application</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>클라이언트 사용자 에이전트</auth:DisplayName>
-				<auth:Description>클라이언트에서 응용 프로그램에 액세스하는 데 사용하는 장치 유형</auth:Description>
+				<auth:DisplayName>Client User Agent</auth:DisplayName>
+				<auth:Description>Device type the client is using to access the
+					application</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-ip"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>클라이언트 IP</auth:DisplayName>
-				<auth:Description>클라이언트의 IP 주소</auth:Description>
+				<auth:DisplayName>Client IP</auth:DisplayName>
+				<auth:Description>IP address of the client</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>끝점 경로</auth:DisplayName>
-				<auth:Description>활성 또는 수동 클라이언트인지 확인하는 데 사용할 수 있는 절대 끝점 경로</auth:Description>
+				<auth:DisplayName>Endpoint Path</auth:DisplayName>
+				<auth:Description>Absolute Endpoint path which can be used to
+					determine active versus passive clients</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>프록시</auth:DisplayName>
-				<auth:Description>요청을 전달한 페더레이션 서버 프록시의 DNS 이름</auth:Description>
+				<auth:DisplayName>Proxy</auth:DisplayName>
+				<auth:Description>DNS name of the federation server proxy that
+					passed the request</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/relyingpartytrustid"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>응용 프로그램 식별자</auth:DisplayName>
-				<auth:Description>신뢰 당사자의 식별자</auth:Description>
+				<auth:DisplayName>Application Identifier</auth:DisplayName>
+				<auth:Description>Identifier for the Relying Party
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/applicationpolicy"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>응용 프로그램 정책</auth:DisplayName>
-				<auth:Description>인증서의 응용 프로그램 정책</auth:Description>
+				<auth:DisplayName>Application policies</auth:DisplayName>
+				<auth:Description>Application policies of the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>권한 키 식별자</auth:DisplayName>
-				<auth:Description>발급된 인증서에 서명한 인증서의 권한 키 식별자 확장</auth:Description>
+				<auth:DisplayName>Authority Key Identifier</auth:DisplayName>
+				<auth:Description>The Authority Key Identifier extension of the
+					certificate that signed an issued certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/basicconstraints"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>기본 제약 조건</auth:DisplayName>
-				<auth:Description>인증서의 기본 제약 조건 중 하나</auth:Description>
+				<auth:DisplayName>Basic Constraint</auth:DisplayName>
+				<auth:Description>One of the basic constraints of the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/eku"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>확장된 키 사용</auth:DisplayName>
-				<auth:Description>인증서의 확장된 키 사용 중 하나를 설명함</auth:Description>
+				<auth:DisplayName>Enhanced Key Usage</auth:DisplayName>
+				<auth:Description>Describes one of the enhanced key usages of the
+					certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuer"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>발급자</auth:DisplayName>
-				<auth:Description>X.509 인증서를 발급한 인증 기관의 이름</auth:Description>
+				<auth:DisplayName>Issuer</auth:DisplayName>
+				<auth:Description>The name of the certificate authority that issued
+					the X.509 certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuername"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>발급자 이름</auth:DisplayName>
-				<auth:Description>인증서 발급자의 고유 이름</auth:Description>
+				<auth:DisplayName>Issuer Name</auth:DisplayName>
+				<auth:Description>The distinguished name of the certificate issuer
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>키 사용</auth:DisplayName>
-				<auth:Description>인증서의 키 사용 중 하나</auth:Description>
+				<auth:DisplayName>Key Usage</auth:DisplayName>
+				<auth:Description>One of the key usages of the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/notafter"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이전</auth:DisplayName>
-				<auth:Description>인증서가 더 이상 유효해지지 않는 로컬 시간의 날짜</auth:Description>
+				<auth:DisplayName>Not After</auth:DisplayName>
+				<auth:Description>Date in local time after which a certificate is no
+					longer valid</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/notbefore"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>이후</auth:DisplayName>
-				<auth:Description>인증서가 유효해지는 로컬 시간의 날짜</auth:Description>
+				<auth:DisplayName>Not Before</auth:DisplayName>
+				<auth:Description>The date in local time on which a certificate
+					becomes valid</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatepolicy"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증서 정책</auth:DisplayName>
-				<auth:Description>인증서가 발급될 때 사용된 정책</auth:Description>
+				<auth:DisplayName>Certificate Policies</auth:DisplayName>
+				<auth:Description>The policies under which the certificate has been
+					issued</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>공개 키</auth:DisplayName>
-				<auth:Description>인증서의 공개 키</auth:Description>
+				<auth:DisplayName>Public Key</auth:DisplayName>
+				<auth:Description>Public Key of the certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증서 원시 데이터</auth:DisplayName>
-				<auth:Description>인증서의 원시 데이터</auth:Description>
+				<auth:DisplayName>Certificate Raw Data</auth:DisplayName>
+				<auth:Description>The raw data of the certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/san"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>주체 대체 이름</auth:DisplayName>
-				<auth:Description>인증서의 대체 이름 중 하나</auth:Description>
+				<auth:DisplayName>Subject Alternative Name</auth:DisplayName>
+				<auth:Description>One of the alternative names of the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>일련 번호</auth:DisplayName>
-				<auth:Description>인증서의 일련 번호</auth:Description>
+				<auth:DisplayName>Serial Number</auth:DisplayName>
+				<auth:Description>The serial number of a certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/signaturealgorithm"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>서명 알고리즘</auth:DisplayName>
-				<auth:Description>인증서의 서명을 만드는 데 사용되는 알고리즘</auth:Description>
+				<auth:DisplayName>Signature Algorithm</auth:DisplayName>
+				<auth:Description>The algorithm used to create the signature of a
+					certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/subject"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>주체</auth:DisplayName>
-				<auth:Description>인증서의 주체</auth:Description>
+				<auth:DisplayName>Subject</auth:DisplayName>
+				<auth:Description>The subject from the certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>주체 키 식별자</auth:DisplayName>
-				<auth:Description>인증서의 주체 키 식별자를 설명함</auth:Description>
+				<auth:DisplayName>Subject Key Identifier</auth:DisplayName>
+				<auth:Description>Describes the subject key identifier of the
+					certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>주체 이름</auth:DisplayName>
-				<auth:Description>인증서의 주체 고유 이름</auth:Description>
+				<auth:DisplayName>Subject Name</auth:DisplayName>
+				<auth:Description>The subject distinguished name from a certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplateinformation"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>V2 템플릿 이름</auth:DisplayName>
-				<auth:Description>인증서를 발급하거나 갱신할 때 사용되는 버전 2 인증서 템플릿의 이름입니다. 확장은
-					Microsoft 고유의 확장입니다.</auth:Description>
+				<auth:DisplayName>V2 Template Name</auth:DisplayName>
+				<auth:Description>The name of the version 2 certificate template
+					used when issuing or renewing a certificate. The extension is
+					Microsoft specific.</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>V1 템플릿 이름</auth:DisplayName>
-				<auth:Description>인증서를 발급하거나 갱신할 때 사용되는 버전 1 인증서 템플릿의 이름입니다. 확장은
-					Microsoft 고유의 확장입니다.</auth:Description>
+				<auth:DisplayName>V1 Template Name</auth:DisplayName>
+				<auth:Description>The name of the version 1 certificate template
+					used when issuing or renewing a certificate. The extension is
+					Microsoft specific.</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/thumbprint"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>지문</auth:DisplayName>
-				<auth:Description>인증서의 지문</auth:Description>
+				<auth:DisplayName>Thumbprint</auth:DisplayName>
+				<auth:Description>Thumbprint of the certificate</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/x509version"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>X.509 버전</auth:DisplayName>
-				<auth:Description>인증서의 X.509 형식 버전</auth:Description>
+				<auth:DisplayName>X.509 Version</auth:DisplayName>
+				<auth:Description>The X.509 format version of a certificate
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>회사 네트워크 내부</auth:DisplayName>
-				<auth:Description>회사 네트워크에서 요청이 발생했는지 여부를 나타내는 데 사용됨</auth:Description>
+				<auth:DisplayName>Inside Corporate Network</auth:DisplayName>
+				<auth:Description>Used to indicate if a request originated inside
+					corporate network</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>암호 만료 시간</auth:DisplayName>
-				<auth:Description>암호가 만료되는 시간을 표시하는 데 사용됨</auth:Description>
+				<auth:DisplayName>Password Expiration Time</auth:DisplayName>
+				<auth:Description>Used to display the time when the password expires
+				</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>암호 만료 기간(일)</auth:DisplayName>
-				<auth:Description>암호 만료까지 남은 기간(일)을 표시하는 데 사용됨</auth:Description>
+				<auth:DisplayName>Password Expiration Days</auth:DisplayName>
+				<auth:Description>Used to display the number of days to password
+					expiry</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/ws/2012/01/passwordchangeurl"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>업데이트 암호 URL</auth:DisplayName>
-				<auth:Description>업데이트 암호 서비스의 웹 주소를 표시하는 데 사용됨</auth:Description>
+				<auth:DisplayName>Update Password URL</auth:DisplayName>
+				<auth:Description>Used to display the web address of update password
+					service</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/claims/authnmethodsreferences"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>인증 방법 참조</auth:DisplayName>
-				<auth:Description>사용자를 인증하는 데 사용된 모든 인증 방법을 나타내는 데 사용됨</auth:Description>
+				<auth:DisplayName>Authentication Methods References
+				</auth:DisplayName>
+				<auth:Description>Used to indicate all authentication methods used
+					to authenticate the user</auth:Description>
 			</auth:ClaimType>
 			<auth:ClaimType
 				Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/client-request-id"
 				Optional="true"
 				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>클라이언트 요청 ID</auth:DisplayName>
-				<auth:Description>사용자 세션의 식별자</auth:Description>
-			</auth:ClaimType>
-			<auth:ClaimType
-				Uri="http://schemas.microsoft.com/ws/2013/11/alternateloginid"
-				Optional="true"
-				xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706">
-				<auth:DisplayName>대체 로그인 ID</auth:DisplayName>
-				<auth:Description>사용자의 대체 로그인 ID</auth:Description>
+				<auth:DisplayName>Client Request ID</auth:DisplayName>
+				<auth:Description>Identifier for a user session</auth:Description>
 			</auth:ClaimType>
 		</fed:ClaimTypesOffered>
 		<fed:SecurityTokenServiceEndpoint>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/services/trust/2005/certificatemixed</Address>
+				<Address>https://fs.unist.ac.kr/adfs/services/trust/2005/certificatemixed
+				</Address>
 				<Metadata>
 					<Metadata
 						xmlns="http://schemas.xmlsoap.org/ws/2004/09/mex"
@@ -1015,7 +1099,8 @@
 						<wsx:MetadataSection
 							Dialect="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns="">
 							<wsx:MetadataReference>
-								<Address xmlns="http://www.w3.org/2005/08/addressing">https://sts.unist.ac.kr/adfs/services/trust/mex</Address>
+								<Address xmlns="http://www.w3.org/2005/08/addressing">https://fs.unist.ac.kr/adfs/services/trust/mex
+								</Address>
 							</wsx:MetadataReference>
 						</wsx:MetadataSection>
 					</Metadata>
@@ -1025,7 +1110,7 @@
 		<fed:PassiveRequestorEndpoint>
 			<EndpointReference
 				xmlns="http://www.w3.org/2005/08/addressing">
-				<Address>https://sts.unist.ac.kr/adfs/ls/</Address>
+				<Address>https://fs.unist.ac.kr/adfs/ls/</Address>
 			</EndpointReference>
 		</fed:PassiveRequestorEndpoint>
 	</RoleDescriptor>
@@ -1034,7 +1119,7 @@
 		<KeyDescriptor use="encryption">
 			<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 				<X509Data>
-					<X509Certificate>MIIC4DCCAcigAwIBAgIQRFRdQABaOalOMz8t5lYosDANBgkqhkiG9w0BAQsFADAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSBzdHMudW5pc3QuYWMua3IwHhcNMjAwNzA0MDAxNjMxWhcNMjEwNzA0MDAxNjMxWjAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSBzdHMudW5pc3QuYWMua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0E+sp4dx5jes6BcdLHcYKBrhEb3zEQWiXICDC4shs5knMUwOMk2qwna/Q3vWOsATXlmFXcF54Et7CiaJkXk6mJYkmEC+Fo3kyq6uf93I7Aq8SlcV5AHN3MxwAmdsHDjjy6vQJxq0zmNsXA6WRwh8UC2nCimYXTRj6l0zwYg3XRRBvx0xDVRnDmmWRmMJBo7vEkQdSLFM3oBbEJGXwcYqwMHVj2YjX0DjKigYp3+7DXo3COxfLM6WzY/L+vyCTcrjilRqaw7p0JDTkaGtZIWE4He+mJvLCw/2/rEesr/7XfaNG2+5Sgs+49n9VnabbCmf4zwWXfIXZkTerZidJBcFzAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAKahO+WZ6Zt3cAmbrbaGokl/P5PtFYLbKwel7/gn/YnyftRCKSJ5T2JOU+ywdv66Y3jX4RSVtjnX+JNRDUF0YZf4Ge6quAXLLf7QFZx3gGAiXGSwpGlW4AC5nw0b5oX2OFhs5aXxLO+Y33IkYzdWZlthagJRjHP0VeiG6ebdG3ujxgM93fuorzfWdcgp9/Wx3q2Ab3B+H5hmtV0wcPvDGtisfBpz8I1mDtq+XNUfCgsrKdBioim2h8jACQAWur6yoD02QcOmCczMA6uC8HkseyLejRnykH+VVG0GckBnKyNRNAZzzW0qBxCZ/nkTlwDQkIsSccXXBZyrq2faiDDVMGk=
+					<X509Certificate>MIIC3jCCAcagAwIBAgIQYOLNH/Wz0ZZIEc4GpuiapDANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDEyBBREZTIEVuY3J5cHRpb24gLSBmcy51bmlzdC5hYy5rcjAeFw0yMTA3MDEwNjI0NDlaFw0yMjA3MDEwNjI0NDlaMCsxKTAnBgNVBAMTIEFERlMgRW5jcnlwdGlvbiAtIGZzLnVuaXN0LmFjLmtyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6iy51kRgFuBecs0G1aA0NJEomD/e8sckJw9EdoXE3mOe22Xm1tpd6VV/3dpz0vdCOGL26ZJrYxuWAaQOSVC3RwBjU16xxoAv26URlxaAW3DwCX1ccKuL+ybUoSQ0HM/S0oOcL6+LsRXhzNlxd8EMVBn83ItBERqg0FHBHq2eSaMZFLC9M8kwh64XXmTZdq75tAgfmXjo3ATk4gISzEGUCzv22zWh9QEjIcPYOxTBLQGmrdI1DfB5UBd0N02PS2bqxKMGtU1lclAkNyAnAg6+vgZF31Z5gJudXvPy72XZPK392Q+XvRTeNRbuUPH6KGAeVavVPZbPcPeu2JBjUK5NSQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQDpBMux3MVQ7aXIp0mqn9M8eprc0RQWeKYAir5IhoVgQ5EK66ZooKwNW8Mm7RJmKeeYmZ27VdVT0JWTdxXrrXy7/SyPJ7x9xHWG3xX/SAxdpIIhDi63Fytvx0eiPQX1MeMDuc6RKBLpeJ4FeMf8z+fHPYBGFWEE44zRwjrqJA5tLm1SnVWNiTdoj2gkEMhWLeKjizZdYIjY+5AywIg/mtHapUMnCpMxzaa/WjL01ysQDUkDmgRvbabitVKtTLsRbOQGpOM+w2vlhAnmtdylBBOjI6GK/dZLTHqXpu1OW9NkpeKoij1uNbezeiGbk39kim1qXscMO2yFbmWHpdInDS7V
 					</X509Certificate>
 				</X509Data>
 			</KeyInfo>
@@ -1042,37 +1127,36 @@
 		<KeyDescriptor use="signing">
 			<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 				<X509Data>
-					<X509Certificate>MIIC2jCCAcKgAwIBAgIQZhaCtf7hZqxJWZFY1oFl/zANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSBzdHMudW5pc3QuYWMua3IwHhcNMjAwNzA0MDAxNjMyWhcNMjEwNzA0MDAxNjMyWjApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSBzdHMudW5pc3QuYWMua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCkwDGxh1PVtQadFkuHXBqA4X7G/M54uCe8SClTe5EefMaUH61JAPvVFs9feSmWf49+5fuJtWx4xOoyq59r+BuMIsZfAjBwAs+yH3B1cUjnHGR0pkm/yZyhEh1WXBCsLrAJmT3eWXTyPhuSRyto3O8Dn+GvXTHGaDHNoTrzwlQFl4a0LflAVQtUFryAkhboZasDppkZrNxgobSu8SRnFo3n7PMmKqU1DgUOGDnteH6I0D/W1V+/sBjNqR9j53YYh9FqXQkM1QQr98jEsq8htxgr93YKVRaMJSs0SxbaBA9YtXq/N9eZwnXnN8B7D6VI6CAczblyD6us6yEmOy8yKyLNAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAAXBHysb7PI+0OMxefN2WVXkQ5moel/MFcJCYor0tEsg8YlIBZ56T1FlDSq9x13e1lgbr2n5lc9BeGhIIElGNfX/E9QOJZ5wywvO78dY8rQSlk/Isw1nhAEI2mxd1ObwS9PWPVEMt1zN1g9/vNQ+jiB5AonqV8Dfz4oYEHzdE62gtXOTHonmyOxK9naCBxJqJ8tigK4+kf8/6exLsciUbMFBcHPsEon4xtv1lgTV1r1pWl6fYsl9NBFR67us/XwkEv/aprvDv4dsuySLyVX4VEDuPh3Z9fAV2ZuouKHrhlr1ZzV/NKKRxjWn8WQXzs8c7u/8lpejDZdgXnhQ+RWsZEg=
+					<X509Certificate>MIIC2DCCAcCgAwIBAgIQGcKoKZCvQq9AyK6OjjLtDTANBgkqhkiG9w0BAQsFADAoMSYwJAYDVQQDEx1BREZTIFNpZ25pbmcgLSBmcy51bmlzdC5hYy5rcjAeFw0yMTA3MDEwNjI0NDlaFw0yMjA3MDEwNjI0NDlaMCgxJjAkBgNVBAMTHUFERlMgU2lnbmluZyAtIGZzLnVuaXN0LmFjLmtyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvTiiD956RPZ3L3BZrNIPPNAg5/ba8iOgTfLZyIbh53kmgZDNoPJaCQZhcEfr4DwEjYYL9WMcdO/Z6OEt8VmX0wKy4aZzXNBRxWwOmc3xUaWkjoE65YBNB2w6lF3iGa5puaip1PY0mNMjHDR0iJX0spy7qMSoeWgHK61WFW8JoosWA72T7it4M53jRoGgC0crZSNg+1cm/Of+3J16+vcZZNo2vwsXFOwrvHq4HO0CSH4rf1jH06lt1Cvk930xae3WrVuB3fbt2YMn+r1LMMQP19UpQx+vppWqVLYGs9QSPe9W19QYh5gAgv968P4c+Jojk7TSl8SPqKQJvtcmFnJgEQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCFU62rDAr/4ua/cnRXU9Ri8K0NMJYcxSU7fIIaxNn/75KmjoX+3+6idPXrvuM4uavqIZ61ux3b6+8cotiDuGwAx93O4qYRk5dkT4ti0ye/dLM9z1HBarel1FToBPfXYl7M7NGGiO85sthfnmLJiJ/Buwn35R5IUzqbjtFQ8CEO1f+X/RqAlzQVThGOHJkJXnG1bY7F6nEOXqLNYcT59G8SNIw4WRebmUmoXYQp4so9rUJc1AxbnTWBzfGuSpxyl3FW1u0gBs2KiHWGtlyJc/UJ/OkvFl4h4f2ViBjULgzFRvB13jOGTZ+fmqKqU+X6NBeACHj/da5mrQJ5doJ/03w4
 					</X509Certificate>
 				</X509Data>
 			</KeyInfo>
 		</KeyDescriptor>
 		<SingleLogoutService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-			Location="https://sts.unist.ac.kr/adfs/ls/" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" />
 		<SingleLogoutService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-			Location="https://sts.unist.ac.kr/adfs/ls/" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" />
 		<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
 		<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
 		<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
 		<AssertionConsumerService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-			Location="https://sts.unist.ac.kr/adfs/ls/" index="0"
-			isDefault="true" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" index="0" isDefault="true" />
 		<AssertionConsumerService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact"
-			Location="https://sts.unist.ac.kr/adfs/ls/" index="1" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" index="1" />
 		<AssertionConsumerService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-			Location="https://sts.unist.ac.kr/adfs/ls/" index="2" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" index="2" />
 	</SPSSODescriptor>
 	<IDPSSODescriptor
 		protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
 		<KeyDescriptor use="encryption">
 			<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 				<X509Data>
-					<X509Certificate>MIIC4DCCAcigAwIBAgIQRFRdQABaOalOMz8t5lYosDANBgkqhkiG9w0BAQsFADAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSBzdHMudW5pc3QuYWMua3IwHhcNMjAwNzA0MDAxNjMxWhcNMjEwNzA0MDAxNjMxWjAsMSowKAYDVQQDEyFBREZTIEVuY3J5cHRpb24gLSBzdHMudW5pc3QuYWMua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0E+sp4dx5jes6BcdLHcYKBrhEb3zEQWiXICDC4shs5knMUwOMk2qwna/Q3vWOsATXlmFXcF54Et7CiaJkXk6mJYkmEC+Fo3kyq6uf93I7Aq8SlcV5AHN3MxwAmdsHDjjy6vQJxq0zmNsXA6WRwh8UC2nCimYXTRj6l0zwYg3XRRBvx0xDVRnDmmWRmMJBo7vEkQdSLFM3oBbEJGXwcYqwMHVj2YjX0DjKigYp3+7DXo3COxfLM6WzY/L+vyCTcrjilRqaw7p0JDTkaGtZIWE4He+mJvLCw/2/rEesr/7XfaNG2+5Sgs+49n9VnabbCmf4zwWXfIXZkTerZidJBcFzAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAKahO+WZ6Zt3cAmbrbaGokl/P5PtFYLbKwel7/gn/YnyftRCKSJ5T2JOU+ywdv66Y3jX4RSVtjnX+JNRDUF0YZf4Ge6quAXLLf7QFZx3gGAiXGSwpGlW4AC5nw0b5oX2OFhs5aXxLO+Y33IkYzdWZlthagJRjHP0VeiG6ebdG3ujxgM93fuorzfWdcgp9/Wx3q2Ab3B+H5hmtV0wcPvDGtisfBpz8I1mDtq+XNUfCgsrKdBioim2h8jACQAWur6yoD02QcOmCczMA6uC8HkseyLejRnykH+VVG0GckBnKyNRNAZzzW0qBxCZ/nkTlwDQkIsSccXXBZyrq2faiDDVMGk=
+					<X509Certificate>MIIC3jCCAcagAwIBAgIQYOLNH/Wz0ZZIEc4GpuiapDANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDEyBBREZTIEVuY3J5cHRpb24gLSBmcy51bmlzdC5hYy5rcjAeFw0yMTA3MDEwNjI0NDlaFw0yMjA3MDEwNjI0NDlaMCsxKTAnBgNVBAMTIEFERlMgRW5jcnlwdGlvbiAtIGZzLnVuaXN0LmFjLmtyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6iy51kRgFuBecs0G1aA0NJEomD/e8sckJw9EdoXE3mOe22Xm1tpd6VV/3dpz0vdCOGL26ZJrYxuWAaQOSVC3RwBjU16xxoAv26URlxaAW3DwCX1ccKuL+ybUoSQ0HM/S0oOcL6+LsRXhzNlxd8EMVBn83ItBERqg0FHBHq2eSaMZFLC9M8kwh64XXmTZdq75tAgfmXjo3ATk4gISzEGUCzv22zWh9QEjIcPYOxTBLQGmrdI1DfB5UBd0N02PS2bqxKMGtU1lclAkNyAnAg6+vgZF31Z5gJudXvPy72XZPK392Q+XvRTeNRbuUPH6KGAeVavVPZbPcPeu2JBjUK5NSQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQDpBMux3MVQ7aXIp0mqn9M8eprc0RQWeKYAir5IhoVgQ5EK66ZooKwNW8Mm7RJmKeeYmZ27VdVT0JWTdxXrrXy7/SyPJ7x9xHWG3xX/SAxdpIIhDi63Fytvx0eiPQX1MeMDuc6RKBLpeJ4FeMf8z+fHPYBGFWEE44zRwjrqJA5tLm1SnVWNiTdoj2gkEMhWLeKjizZdYIjY+5AywIg/mtHapUMnCpMxzaa/WjL01ysQDUkDmgRvbabitVKtTLsRbOQGpOM+w2vlhAnmtdylBBOjI6GK/dZLTHqXpu1OW9NkpeKoij1uNbezeiGbk39kim1qXscMO2yFbmWHpdInDS7V
 					</X509Certificate>
 				</X509Data>
 			</KeyInfo>
@@ -1080,58 +1164,57 @@
 		<KeyDescriptor use="signing">
 			<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
 				<X509Data>
-					<X509Certificate>MIIC2jCCAcKgAwIBAgIQZhaCtf7hZqxJWZFY1oFl/zANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSBzdHMudW5pc3QuYWMua3IwHhcNMjAwNzA0MDAxNjMyWhcNMjEwNzA0MDAxNjMyWjApMScwJQYDVQQDEx5BREZTIFNpZ25pbmcgLSBzdHMudW5pc3QuYWMua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCkwDGxh1PVtQadFkuHXBqA4X7G/M54uCe8SClTe5EefMaUH61JAPvVFs9feSmWf49+5fuJtWx4xOoyq59r+BuMIsZfAjBwAs+yH3B1cUjnHGR0pkm/yZyhEh1WXBCsLrAJmT3eWXTyPhuSRyto3O8Dn+GvXTHGaDHNoTrzwlQFl4a0LflAVQtUFryAkhboZasDppkZrNxgobSu8SRnFo3n7PMmKqU1DgUOGDnteH6I0D/W1V+/sBjNqR9j53YYh9FqXQkM1QQr98jEsq8htxgr93YKVRaMJSs0SxbaBA9YtXq/N9eZwnXnN8B7D6VI6CAczblyD6us6yEmOy8yKyLNAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAAXBHysb7PI+0OMxefN2WVXkQ5moel/MFcJCYor0tEsg8YlIBZ56T1FlDSq9x13e1lgbr2n5lc9BeGhIIElGNfX/E9QOJZ5wywvO78dY8rQSlk/Isw1nhAEI2mxd1ObwS9PWPVEMt1zN1g9/vNQ+jiB5AonqV8Dfz4oYEHzdE62gtXOTHonmyOxK9naCBxJqJ8tigK4+kf8/6exLsciUbMFBcHPsEon4xtv1lgTV1r1pWl6fYsl9NBFR67us/XwkEv/aprvDv4dsuySLyVX4VEDuPh3Z9fAV2ZuouKHrhlr1ZzV/NKKRxjWn8WQXzs8c7u/8lpejDZdgXnhQ+RWsZEg=
+					<X509Certificate>MIIC2DCCAcCgAwIBAgIQGcKoKZCvQq9AyK6OjjLtDTANBgkqhkiG9w0BAQsFADAoMSYwJAYDVQQDEx1BREZTIFNpZ25pbmcgLSBmcy51bmlzdC5hYy5rcjAeFw0yMTA3MDEwNjI0NDlaFw0yMjA3MDEwNjI0NDlaMCgxJjAkBgNVBAMTHUFERlMgU2lnbmluZyAtIGZzLnVuaXN0LmFjLmtyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvTiiD956RPZ3L3BZrNIPPNAg5/ba8iOgTfLZyIbh53kmgZDNoPJaCQZhcEfr4DwEjYYL9WMcdO/Z6OEt8VmX0wKy4aZzXNBRxWwOmc3xUaWkjoE65YBNB2w6lF3iGa5puaip1PY0mNMjHDR0iJX0spy7qMSoeWgHK61WFW8JoosWA72T7it4M53jRoGgC0crZSNg+1cm/Of+3J16+vcZZNo2vwsXFOwrvHq4HO0CSH4rf1jH06lt1Cvk930xae3WrVuB3fbt2YMn+r1LMMQP19UpQx+vppWqVLYGs9QSPe9W19QYh5gAgv968P4c+Jojk7TSl8SPqKQJvtcmFnJgEQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCFU62rDAr/4ua/cnRXU9Ri8K0NMJYcxSU7fIIaxNn/75KmjoX+3+6idPXrvuM4uavqIZ61ux3b6+8cotiDuGwAx93O4qYRk5dkT4ti0ye/dLM9z1HBarel1FToBPfXYl7M7NGGiO85sthfnmLJiJ/Buwn35R5IUzqbjtFQ8CEO1f+X/RqAlzQVThGOHJkJXnG1bY7F6nEOXqLNYcT59G8SNIw4WRebmUmoXYQp4so9rUJc1AxbnTWBzfGuSpxyl3FW1u0gBs2KiHWGtlyJc/UJ/OkvFl4h4f2ViBjULgzFRvB13jOGTZ+fmqKqU+X6NBeACHj/da5mrQJ5doJ/03w4
 					</X509Certificate>
 				</X509Data>
 			</KeyInfo>
 		</KeyDescriptor>
-		<ArtifactResolutionService
-			Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-			Location="https://sts.unist.ac.kr/adfs/services/trust/artifactresolution"
-			index="0" />
 		<SingleLogoutService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-			Location="https://sts.unist.ac.kr/adfs/ls/" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" />
 		<SingleLogoutService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-			Location="https://sts.unist.ac.kr/adfs/ls/" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" />
 		<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
 		<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
 		<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
 		<SingleSignOnService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-			Location="https://sts.unist.ac.kr/adfs/ls/" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" />
 		<SingleSignOnService
 			Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-			Location="https://sts.unist.ac.kr/adfs/ls/" />
+			Location="https://fs.unist.ac.kr/adfs/ls/" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="전자 메일 주소" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="E-Mail Address"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="이름" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Given Name"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="이름" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Name" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
-			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn" 
+			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
 			FriendlyName="UPN" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/claims/CommonName"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="일반 이름" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Common Name"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/claims/EmailAddress"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="AD FS 1.x 전자 메일 주소"
+			FriendlyName="AD FS 1.x E-Mail Address"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute Name="http://schemas.xmlsoap.org/claims/Group"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="그룹" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Group" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute Name="http://schemas.xmlsoap.org/claims/UPN"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
 			FriendlyName="AD FS 1.x UPN"
@@ -1139,7 +1222,7 @@
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="역할" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Role" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
@@ -1151,236 +1234,258 @@
 		<Attribute
 			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="이름 ID" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Name ID" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="인증 타임 스탬프"
+			FriendlyName="Authentication time stamp"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="인증 방법" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Authentication method"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="거부 전용 그룹 SID"
+			FriendlyName="Deny only group SID"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarysid"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="거부 전용 기본 SID"
+			FriendlyName="Deny only primary SID"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarygroupsid"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="거부 전용 기본 그룹 SID"
+			FriendlyName="Deny only primary group SID"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="그룹 SID" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Group SID"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="기본 그룹 SID"
+			FriendlyName="Primary group SID"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="기본 SID" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Primary SID"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="Windows 계정 이름"
+			FriendlyName="Windows account name"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="등록된 사용자임" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Is Registered User"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="장치 식별자" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Device Identifier"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="Device Registration 식별자"
+			FriendlyName="Device Registration Identifier"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="Device Registration 표시 이름"
+			FriendlyName="Device Registration DisplayName"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/ostype"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="장치 OS 유형" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Device OS type"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/osversion"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="장치 OS 버전" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Device OS Version"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/ismanaged"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="관리 장치임" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Is Managed Device"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="전달된 클라이언트 IP"
+			FriendlyName="Forwarded Client IP"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="클라이언트 응용 프로그램"
+			FriendlyName="Client Application"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="클라이언트 사용자 에이전트"
+			FriendlyName="Client User Agent"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-ip"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="클라이언트 IP" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Client IP"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="끝점 경로" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Endpoint Path"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="프록시" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Proxy" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/relyingpartytrustid"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="응용 프로그램 식별자"
+			FriendlyName="Application Identifier"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/applicationpolicy"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="응용 프로그램 정책"
+			FriendlyName="Application policies"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="권한 키 식별자" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Authority Key Identifier"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/basicconstraints"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="기본 제약 조건" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Basic Constraint"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/eku"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="확장된 키 사용" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Enhanced Key Usage"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuer"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="발급자" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Issuer" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuername"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="발급자 이름" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Issuer Name"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="키 사용" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Key Usage"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/notafter"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="이전" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Not After"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/notbefore"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="이후" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Not Before"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatepolicy"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="인증서 정책" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Certificate Policies"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="공개 키" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Public Key"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="인증서 원시 데이터"
+			FriendlyName="Certificate Raw Data"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/san"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="주체 대체 이름" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Subject Alternative Name"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="일련 번호" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Serial Number"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/signaturealgorithm"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="서명 알고리즘" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Signature Algorithm"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/subject"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="주체" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Subject" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="주체 키 식별자" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Subject Key Identifier"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="주체 이름" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Subject Name"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplateinformation"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="V2 템플릿 이름"
+			FriendlyName="V2 Template Name"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="V1 템플릿 이름"
+			FriendlyName="V1 Template Name"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/thumbprint"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="지문" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Thumbprint"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/x509version"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="X.509 버전" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="X.509 Version"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="회사 네트워크 내부"
+			FriendlyName="Inside Corporate Network"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="암호 만료 시간" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Password Expiration Time"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="암호 만료 기간(일)"
+			FriendlyName="Password Expiration Days"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/ws/2012/01/passwordchangeurl"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="업데이트 암호 URL"
+			FriendlyName="Update Password URL"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/claims/authnmethodsreferences"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="인증 방법 참조" xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
+			FriendlyName="Authentication Methods References"
+			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 		<Attribute
 			Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/client-request-id"
 			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="클라이언트 요청 ID"
-			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
-		<Attribute
-			Name="http://schemas.microsoft.com/ws/2013/11/alternateloginid"
-			NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-			FriendlyName="대체 로그인 ID"
+			FriendlyName="Client Request ID"
 			xmlns="urn:oasis:names:tc:SAML:2.0:assertion" />
 	</IDPSSODescriptor>
-	<ContactPerson contactType="support" />
 </EntityDescriptor>
